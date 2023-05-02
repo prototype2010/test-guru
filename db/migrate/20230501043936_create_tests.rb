@@ -1,5 +1,5 @@
 class CreateTests < ActiveRecord::Migration[6.1]
-  def up
+  def change
     create_table :tests do |t|
       t.string :title, null: false
       t.integer :level, default: 0
@@ -7,9 +7,5 @@ class CreateTests < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-  end
-
-  def down
-    drop_table :tests
   end
 end
