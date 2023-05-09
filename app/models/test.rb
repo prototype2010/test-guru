@@ -2,7 +2,12 @@ class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
 
-  scope :by_category_title, ->(category_title) do
-    Test.where(category_id: Category.where("title = :title", title: category_title))
+  class << self
+    def by_category_title(category_title)
+      joins(:category)
+        .where('categories.title': category_title)
+        .order('tests.title': :desc)
+        .pluck('tests.title')
+    end
   end
 end

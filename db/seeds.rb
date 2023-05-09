@@ -6,16 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |category_number|
-  category = Category.create(title: "Category #{category_number}")
-  user = User.create(name: "Name #{category_number}", password: rand(100..1000), email: "#{rand(100..1000)}@gmail.com")
+5.times do |category_number|
+  category = Category.create!(title: "Category #{category_number}")
 
   5.times do |test_number|
-    test = Test.create(title: "test #{test_number}", level: rand(1..5), category_id: category.id, user_id: user.id)
+    test = Test.create!(title: "test number #{test_number}", level: test_number, category_id: category.id)
 
-    10.times do |question_number|
-      question = Question.create(body: "question body #{question_number}", test_id: test.id)
-      Answer.create(is_correct: true, question_id: question.id)
+    5.times do |question_number|
+      Question.create!(body: "Question body #{question_number}", test_id: test.id)
     end
   end
 end
+
+5.times do |user_number|
+  User.create!(name: "Name #{user_number}",
+               password: rand(10..100),
+               email: "#{rand(10..100)}@gmail.com")
+end
+
+Question.all.each  do |question|
+  User.all.each do |user|
+    Answer.create!(user_id: user.id, question_id: question.id, correct: rand > 0.5 ? true : false)
+  end
+end
+
