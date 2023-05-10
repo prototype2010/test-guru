@@ -6,33 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-5.times do |category_number|
-  category = Category.create!(title: "Category #{category_number}")
+user1, user2 = User.create!([
+                      {name: "My name 1", password: rand(10..100), email: "#{rand(50..100)}@gmail.com"},
+                      {name: "My name 2", password: rand(10..100), email: "#{rand(1..50)}@gmail.com"},
+                    ])
 
-  5.times do |test_number|
-    test = Test.create!(title: "test number #{test_number}", level: test_number, category_id: category.id)
+category1, category2 = Category.create!([
+                                          {title: 'Category 1'},
+                                          {title: 'Category 2'}
+                                        ])
 
-    user = User.create!(name: "Name #{test_number}",
-                 password: rand(10..100),
-                 email: "#{rand(10..100)}@gmail.com")
+test1, test2 = Test.create!([
+                              {title: "test 1", level: 0, category_id: category1.id},
+                              {title: "test 2", level: 1, category_id: category2.id},
+                            ])
+question1, question2 = Question.create!([
+                   { body: "Question body 1", test_id: test1.id },
+                   { body: "Question body 2", test_id: test2.id },
+                 ])
 
-    Result.create!(user_id: user.id, test_id: test.id, score: "#{rand(1..100)}%" )
+Result.create!([
+                 {user_id: user1.id, test_id: test1.id, score: "#{rand(1..100)}%"},
+                 {user_id: user2.id, test_id: test2.id, score: "#{rand(1..100)}%"},
+               ])
 
-    5.times do |question_number|
-      Question.create!(body: "Question body #{question_number}", test_id: test.id)
-    end
-  end
-end
-
-5.times do |user_number|
-  User.create!(name: "Name #{user_number}",
-               password: rand(10..100),
-               email: "#{rand(10..100)}@gmail.com")
-end
-
-Question.all.each  do |question|
-  User.all.each do |user|
-    Answer.create!(user_id: user.id, question_id: question.id, correct: rand > 0.5 ? true : false)
-  end
-end
-
+Answer.create!([
+                 {user_id: user1.id, question_id: question1.id, correct: rand > 0.5 ? true : false},
+                 {user_id: user1.id, question_id: question2.id, correct: rand > 0.5 ? true : false},
+                 {user_id: user2.id, question_id: question1.id, correct: rand > 0.5 ? true : false},
+                 {user_id: user2.id, question_id: question2.id, correct: rand > 0.5 ? true : false},
+               ])
