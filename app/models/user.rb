@@ -1,9 +1,12 @@
 class User < ApplicationRecord
 
   def tests_by_level(level)
-    Test.distinct
-        .joins(questions: :answers)
-        .where('answers.user_id': id, 'tests.level': level)
-        .pluck('tests.title')
+    Test.find_by_sql("
+      SELECT title from tests
+      JOIN results ON
+      results.test_id = tests.id
+      AND results.user_id = ?
+      AND tests.level = ?", [id, level])
+        .pluck('title')
   end
 end

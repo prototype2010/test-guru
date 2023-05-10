@@ -12,6 +12,12 @@
   5.times do |test_number|
     test = Test.create!(title: "test number #{test_number}", level: test_number, category_id: category.id)
 
+    user = User.create!(name: "Name #{test_number}",
+                 password: rand(10..100),
+                 email: "#{rand(10..100)}@gmail.com")
+
+    Result.create!(user_id: user.id, test_id: test.id, score: "#{rand(1..100)}%" )
+
     5.times do |question_number|
       Question.create!(body: "Question body #{question_number}", test_id: test.id)
     end
