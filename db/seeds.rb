@@ -20,19 +20,53 @@ test1, test2 = Test.create!([
                               {title: "test 1", level: 0, category_id: category1.id},
                               {title: "test 2", level: 1, category_id: category2.id},
                             ])
-question1, question2 = Question.create!([
-                   { body: "Question body 1", test_id: test1.id },
-                   { body: "Question body 2", test_id: test2.id },
-                 ])
 
 Result.create!([
                  {user_id: user1.id, test_id: test1.id, score: "#{rand(1..100)}%"},
                  {user_id: user2.id, test_id: test2.id, score: "#{rand(1..100)}%"},
                ])
 
+questions = Question.create!([
+                   { body: "Question body 1", test_id: test1.id },
+                   { body: "Question body 2", test_id: test1.id },
+                   { body: "Question body 3", test_id: test1.id },
+                   { body: "Question body 4", test_id: test1.id },
+                   { body: "Question body 5", test_id: test2.id },
+                   { body: "Question body 6", test_id: test2.id },
+                   { body: "Question body 7", test_id: test2.id },
+                   { body: "Question body 7", test_id: test2.id },
+                 ])
+
 Answer.create!([
-                 {user_id: user1.id, question_id: question1.id, correct: rand > 0.5 ? true : false},
-                 {user_id: user1.id, question_id: question2.id, correct: rand > 0.5 ? true : false},
-                 {user_id: user2.id, question_id: question1.id, correct: rand > 0.5 ? true : false},
-                 {user_id: user2.id, question_id: question2.id, correct: rand > 0.5 ? true : false},
+                 {question_id: questions[0].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[0].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[0].id, correct: false, body: 'answer 3'},
+                 {question_id: questions[0].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[1].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[1].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[1].id, correct: false, body: 'answer 3'},
+                 {question_id: questions[1].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[2].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[2].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[2].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[3].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[3].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[3].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[4].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[4].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[4].id, correct: false, body: 'answer 3'},
+                 {question_id: questions[4].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[4].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[4].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[4].id, correct: false, body: 'answer 4'},
+
+                 {question_id: questions[5].id, correct: true, body: 'answer 1'},
+                 {question_id: questions[5].id, correct: false, body: 'answer 2'},
+                 {question_id: questions[5].id, correct: false, body: 'answer 3'},
+                 {question_id: questions[5].id, correct: false, body: 'answer 4'},
                ])
