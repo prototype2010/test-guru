@@ -17,8 +17,8 @@ category1, category2 = Category.create!([
                                         ])
 
 test1, test2 = Test.create!([
-                              {title: "test 1", level: 0, category_id: category1.id},
-                              {title: "test 2", level: 1, category_id: category2.id},
+                              {title: "test 1", level: 0, category_id: category1.id, created_by: user1.id},
+                              {title: "test 2", level: 1, category_id: category2.id, created_by: user2.id},
                             ])
 
 Result.create!([
