@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :results
-  has_many  :tests, foreign_key: :created_by
+  has_many :results, dependent: :destroy
+  has_many :tests, dependent: :destroy
 
   def tests_by_level(level)
     Test.joins(:results)

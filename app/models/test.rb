@@ -1,13 +1,14 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions
-  has_many :results
-  belongs_to :user, foreign_key: :created_by
+  belongs_to :user
+
+  has_many :questions, dependent: :destroy
+  has_many :results, dependent: :destroy
 
   class << self
     def by_category_title(category_title)
       joins(:category)
-        .where({ categories: { title: category_title }})
+        .where({ categories: { title: category_title } })
         .order(title: :desc)
         .pluck(:title)
     end
