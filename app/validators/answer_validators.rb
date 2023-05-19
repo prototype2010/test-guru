@@ -4,9 +4,9 @@ module AnswerValidators
 
   class AnswerMaximumCountValidator < ActiveModel::Validator
     def validate(answer)
-      if answer.question.answers.size >= MAX_ANSWERS
-        answer.errors.add :answer, "Maximum answers count should not be more than #{MAX_ANSWERS}"
-      end
+      return unless answer.question.answers.size >= MAX_ANSWERS
+
+      answer.errors.add :answer, "Maximum answers count should not be more than #{MAX_ANSWERS}"
     end
   end
 
@@ -34,9 +34,9 @@ module AnswerValidators
       next_answer_question = Question.find(answer.question_id)
       next_question_answers_size = next_answer_question.answers.size
 
-      if next_question_answers_size + 1 > MAX_ANSWERS
-        answer.errors.add :answer, "Answer with id #{next_answer_question.id} will have more than #{MAX_ANSWERS} allowed"
-      end
+      return unless next_question_answers_size + 1 > MAX_ANSWERS
+
+      answer.errors.add :answer, "Answer with id #{next_answer_question.id} will have more than #{MAX_ANSWERS} allowed"
     end
   end
 end
