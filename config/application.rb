@@ -18,6 +18,7 @@ module TestGuru
     # config.time_zone = "Central Time (US & Canada)"
     config.time_zone = "Europe/Kiev"
     config.i18n.default_locale = :en
+
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
