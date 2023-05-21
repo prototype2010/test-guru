@@ -6,6 +6,14 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :completed_by, through: :results, source: :user
 
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :level, uniqueness: { scope: :title,  message: 'Test with same title and level already exists' }
+
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
   class << self
     def by_category_title(category_title)
       joins(:category)
