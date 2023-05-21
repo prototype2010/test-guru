@@ -1,0 +1,13 @@
+<h1>Test `<%= @test.title %>` questions:</h1>
+<% if @questions.empty? %>
+  <%= "<p>There are no questions yet</p>".html_safe %>
+<% end %>
+<ul>
+  <% @questions.map do |question| %>
+    <li>
+      <a href="<%= question_path(question)%>">  <%= question.body %></a>
+      <a href="<%= edit_question_path(question) %>">Edit</a>
+    </li>
+  <% end %>
+</ul>
+<a href="<%= new_test_question_path(@test) %>">Create new question</a>
