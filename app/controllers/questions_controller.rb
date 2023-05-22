@@ -4,20 +4,28 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-  def create
-    @question = Question.create!(test: @test, body: params[:question][:body])
-    redirect_to question_path(@question)
-  end
-
   def index
     @questions = @test.questions
   end
 
-  def update
-    @question.body = params[:question][:body]
-    @question.save!
+  def create
+    question = @test.questions.create(body: question_params[:body])
 
-    render :show
+    if question.save
+      redirect_to question_path(question)
+    else
+      render plain: 'Failed to save question', status: 422
+    end
+  end
+
+  def update
+    @question.body = question_params[:body]
+
+    if @question.save
+      render :show
+    else
+      render plain: 'Failed to save entity', status: 422
+    end
   end
 
   def destroy
@@ -33,6 +41,10 @@ class QuestionsController < ApplicationController
   def edit; end
 
   private
+
+  def question_params
+    params.require(:question).permit(:body, :id, :test_id)
+  end
 
   def record_not_found
     render plain: 'Entity not found', status: 404
