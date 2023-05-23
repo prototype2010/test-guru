@@ -9,10 +9,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.build(question_params)
+    @question = @test.questions.build(question_params)
 
-    if question.save
-      redirect_to question_path(question)
+    if @question.save
+      redirect_to question_path(@question)
     else
       render plain: 'Failed to save question', status: 422
     end
