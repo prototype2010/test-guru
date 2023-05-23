@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.create(body: question_params[:body])
+    question = @test.questions.build(question_params)
 
     if question.save
       redirect_to question_path(question)
@@ -19,9 +19,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.body = question_params[:body]
-
-    if @question.save
+    if @question.update(question_params)
       render :show
     else
       render plain: 'Failed to save entity', status: 422
@@ -43,7 +41,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :id, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def record_not_found
