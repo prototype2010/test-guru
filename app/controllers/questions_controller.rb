@@ -32,7 +32,9 @@ class QuestionsController < ApplicationController
     redirect_to test_questions_path(@question.test)
   end
 
-  def new; end
+  def new
+    @question = @test.questions.build
+  end
 
   def show; end
 

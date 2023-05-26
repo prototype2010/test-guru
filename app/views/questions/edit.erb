@@ -1,6 +1,2 @@
-<%= form_with model: @question do |form| %>
-
-<%= form.label :question, "Edit questions #{@question.id}" %>
-<%= form.text_field :body %>
-<%= form.submit "Submit" %>
-<% end %>
+<label>Edit question</label>
+<%= render 'form' %>
