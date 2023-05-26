@@ -1,6 +1,8 @@
 <h1>Test `<%= @test.title %>` questions:</h1>
 <% if @questions.empty? %>
    <p>There are no questions yet</p>
+<% else %>
+  <p>There are <%= @questions.count %> in this test so far</p>
 <% end %>
 <table>
   <tr>

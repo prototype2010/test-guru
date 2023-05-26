@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question)
     else
-      render plain: 'Failed to save question', status: 422
+      render :new
     end
   end
 
@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
     if @question.update(question_params)
       render :show
     else
-      render plain: 'Failed to save entity', status: 422
+      render :edit
     end
   end
 

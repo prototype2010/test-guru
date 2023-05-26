@@ -10,7 +10,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="height: 100%">
     <%= yield %>
   </body>
+  <footer>
+    <p style="text-align: center;position: absolute;bottom: 0;width: 90%;">
+      <%= github_url('Zakorko Alexander', 'https://github.com/prototype2010/test-guru') %>
+      <span>Учебный проект в онлайн-школе Thinknetica</span>,
+      <span><%= current_year %></span>
+    </p>
+  </footer>
 </html>
