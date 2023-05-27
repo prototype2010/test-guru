@@ -1,0 +1,16 @@
+<% if resource.empty? %>
+  <p>There are no questions yet</p>
+<% else %>
+  <p>There are <%= pluralize(resource.count, 'question') %> in this test so far</p>
+<% end %>
+<table>
+  <tr>
+    <th>
+      Questions
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+  <%= render resource %>
+</table>

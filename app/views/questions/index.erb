@@ -1,19 +1,5 @@
+<%= link_to 'To all tests', tests_path %>
 <h1>Test `<%= @test.title %>` questions:</h1>
-<% if @questions.empty? %>
-   <p>There are no questions yet</p>
-<% else %>
-  <p>There are <%= @questions.count %> in this test so far</p>
-<% end %>
-<table>
-  <tr>
-    <th>
-      Questions
-    </th>
-    <th>
-      Actions
-    </th>
-  </tr>
-  <%= render @questions %>
-</table>
+<%= render 'questions_table', resource: @questions %>
 <br/>
 <%= link_to 'Create  new question', new_test_question_path(@test) %>

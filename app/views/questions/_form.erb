@@ -1,5 +1,5 @@
 <label><%= form_header(@question) %></label>
-<%= render 'errors', resource: @question %>
+<%= render 'shared/errors', resource: @question %>
 <%= form_with model: [@test, @question],
               url: @question.new_record? ? test_questions_path : question_path(@question),
               local: true do |form| %>
