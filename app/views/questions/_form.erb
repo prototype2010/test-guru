@@ -1,7 +1,6 @@
 <label><%= form_question_header(@question) %></label>
 <%= render 'shared/errors', resource: @question %>
 <%= form_with model: [@test, @question],
-              url: @question.new_record? ? test_questions_path : question_path(@question),
               local: true do |form| %>
   <%= form.text_field :body %>
   <%= form.submit "Submit" %>

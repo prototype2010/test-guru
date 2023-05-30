@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_question, except: %i[create new]
-  before_action :find_test, only: %i[create new index]
+  before_action :find_test, only: %i[create new]
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to test_path(@question.test)
+      redirect_to question_path(@question)
     else
       render :new
     end

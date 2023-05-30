@@ -2,7 +2,6 @@
 <%= form_with model: @test do |form|%>
   <%= render 'shared/errors',
              resource: @test,
-             url: @test.new_record? ? tests_path : test_path(@test),
              local: true
   %>
   <%= form.label :title %>
