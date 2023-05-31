@@ -1,12 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, except: %i[index create new]
-  before_action :find_test, only: %i[create new index]
+  before_action :find_question, except: %i[create new]
+  before_action :find_test, only: %i[create new]
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
-  def index
-    @questions = @test.questions
-  end
 
   def create
     @question = @test.questions.build(question_params)
@@ -14,7 +10,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question)
     else
-      render plain: 'Failed to save question', status: 422
+      render :new
     end
   end
 
@@ -22,17 +18,19 @@ class QuestionsController < ApplicationController
     if @question.update(question_params)
       render :show
     else
-      render plain: 'Failed to save entity', status: 422
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
 
-    redirect_to test_questions_path(@question.test)
+    redirect_to test_path(@question.test)
   end
 
-  def new; end
+  def new
+    @question = @test.questions.build
+  end
 
   def show; end
 

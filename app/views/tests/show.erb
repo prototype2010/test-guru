@@ -1,0 +1,7 @@
+<label>Test `<%= @test.title %>`</label>
+<br/>
+<label>Category: <%= @test.category.title %></label>
+<%= render 'questions/questions_table', resource: @test.questions %>
+<%= link_to 'create question', new_test_question_path(@test) %>
+<br/>
+<%= link_to 'back to all tests', tests_path %>

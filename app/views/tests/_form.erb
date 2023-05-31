@@ -1,0 +1,20 @@
+<label><%= form_test_header(@test) %></label>
+<%= form_with model: @test do |form|%>
+  <%= render 'shared/errors',
+             resource: @test,
+             local: true
+  %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <br/>
+  <%= form.label :level %>
+  <%= form.number_field :level, min: 1, value: @test.new_record? ? 1 : @test.level %>
+  <br/>
+  <%= form.label :category_id, 'Category' %>
+  <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @test.new_record? %>
+  <br/>
+  <%= form.label :author_id, 'Author' %>
+  <%= form.collection_select :author_id, User.all, :id, :name, prompt:  @test.new_record? %>
+  <br/>
+  <%= form.submit @test.new_record? ? 'Create new test' : 'Update' %>
+<% end %>
