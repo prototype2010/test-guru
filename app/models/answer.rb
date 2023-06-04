@@ -12,7 +12,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_maximum_answers_count
-    return unless question.answers.count >= 4
+    return unless question.answers.count >= MAX_ANSWERS
 
     errors.add :answer, "Maximum answers count should not be more than #{MAX_ANSWERS}"
   end
