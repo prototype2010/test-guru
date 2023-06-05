@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect_to answer_url(@answer), notice: 'Answer was successfully created.'
+      redirect_to answer_path(@answer), notice: 'Answer was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to answer_url(@answer), notice: 'Answer was successfully updated.'
+      redirect_to answer_path(@answer), notice: 'Answer was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end

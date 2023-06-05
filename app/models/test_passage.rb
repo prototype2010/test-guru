@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_RATIO = 0.85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -22,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def passed?
-    (correct_questions / test.questions.count) >= 0.85
+    (correct_questions / test.questions.count) >= SUCCESS_RATIO
   end
 
   private
@@ -41,8 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    answer_ids ||= []
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
