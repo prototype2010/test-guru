@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   has_many :questions, dependent: :destroy
-  has_many :results, dependent: :destroy
-  has_many :completed_by, through: :results, source: :user
+  has_many :test_passages, dependent: :destroy
+  has_many :completed_by, through: :test_passages, source: :user
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
