@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>TestGuru</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,6 +11,21 @@
   </head>
 
   <body style="height: 100%">
+    <% if logged_in? %>
+    <div class="nav-container">
+      <a style="color: #2E2F30" href="<%= tests_path %>">
+        <h1>
+          Test guru
+        </h1>
+      </a>
+      <span class="nav-container">
+        <span class="nav user">Welcome <%= current_user.name %> guru</span>
+        <%= button_to 'Logout', logout_path, method: :delete %>
+      </span>
+    </div>
+
+  <% end %>
+
     <%= yield %>
   </body>
 

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  get 'sessions/new'
+  get 'users/new'
+
+  get :signin, to: 'sessions#new'
+  get :signup, to: 'users#new'
+  delete :logout, to: 'sessions#logout'
+  resources :users, only: :create
+  resources :sessions, only: :create
+
   resources :tests do
     resources :questions, shallow: true, except: %i[index] do
       resources :answers, shallow: true, except: %i[index]
