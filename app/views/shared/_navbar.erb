@@ -5,12 +5,12 @@
       </h1>
     </a>
     <span class="nav-container">
-      <% if logged_in? %>
-        <span class="nav user">Welcome <%= current_user.name %> guru</span>
-        <%= button_to 'Logout', session_path(session.id), method: :delete %>
+      <% if user_signed_in? %>
+        <span class="nav user">Welcome <%= current_user.email %> guru</span>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Signin', new_session_path, class: 'nav user' %>
-        <%= link_to 'Singup', new_user_path %>
+        <%= link_to 'Signin', new_user_session_path, class: 'nav user' %>
+        <%= link_to 'Singup', new_user_registration_path %>
       <% end %>
     </span>
   </nav>
