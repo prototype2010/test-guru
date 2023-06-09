@@ -18,19 +18,12 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
 
-    redirect_to signin_path, alert: 'Logged out successfully'
+    redirect_to new_session_path, alert: 'Logged out successfully'
   end
 
   private
 
   def redirect_to_saved_path
-    redirect_path = cookies[:redirect_path]
-
-    if redirect_path
-      cookies.delete(:redirect_path)
-      redirect_to redirect_path
-    else
-      redirect_to tests_path
-    end
+    redirect_to cookies.delete(:redirect_path) || root_path
   end
 end

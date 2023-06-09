@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to signin_path, alert: 'Registration successful'
+      redirect_to new_session_path, alert: 'Registration successful'
     else
       render :new
     end

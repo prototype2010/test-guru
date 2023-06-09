@@ -1,4 +1,4 @@
-  <div class="nav-container">
+  <nav class="nav-container">
     <a style="color: #2E2F30" href="<%= root_path %>">
       <h1>
         Test guru
@@ -6,13 +6,11 @@
     </a>
     <span class="nav-container">
       <% if logged_in? %>
-
-      <span class="nav user">Welcome <%= current_user.name %> guru</span>
-      <%= button_to 'Logout', logout_path, method: :delete %>
+        <span class="nav user">Welcome <%= current_user.name %> guru</span>
+        <%= button_to 'Logout', session_path(session.id), method: :delete %>
       <% else %>
-      <%= link_to 'Signin', signin_path, class: 'nav user' %>
-      <%= link_to 'Singup', signup_path %>
+        <%= link_to 'Signin', new_session_path, class: 'nav user' %>
+        <%= link_to 'Singup', new_user_path %>
       <% end %>
-
     </span>
-  </div>
+  </nav>

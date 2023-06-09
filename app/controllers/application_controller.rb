@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   helper_method :current_user, :logged_in?
+
   def authenticate_user!
-    unless current_user
-      cookies[:redirect_path] = request.path
-      redirect_to signin_path, alert: 'Sing in required for this path'
-    end
+    return if current_user
+
+    cookies[:redirect_path] = request.path
+    redirect_to new_session_path, alert: 'Sing in required for this path'
   end
 
   def current_user
