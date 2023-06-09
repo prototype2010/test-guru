@@ -1,0 +1,13 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+  <%= render 'shared/flash' %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email, id: :email %>
+  <br/>
+
+  <%= form.label :password %>
+  <%= form.text_field :password, id: :password, type: :password %>
+  <br/>
+
+  <%= form.submit 'Sign in as guru' %>
+<% end %>
