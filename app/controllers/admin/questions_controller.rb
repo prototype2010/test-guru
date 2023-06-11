@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, except: %i[create new]
   before_action :find_test, only: %i[create new]
 
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    redirect_to test_path(@question.test)
+    redirect_to admin_test_path(@question.test)
   end
 
   def new
