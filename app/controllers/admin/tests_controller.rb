@@ -6,7 +6,7 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
 
-  def new;end
+  def new; end
 
   def create
     @test.assign_attributes(test_params)
