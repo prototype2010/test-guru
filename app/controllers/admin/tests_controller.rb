@@ -1,16 +1,16 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_test, only: %i[edit destroy show update start]
-  before_action :set_test, only: %i[new create]
 
   def index
     @tests = Test.all
   end
 
-  def new; end
+  def new
+    @test = Test.new
+  end
 
   def create
-    @test.assign_attributes(test_params)
-    @test.author = current_user
+    @test = current_user.created_tests.build(test_params)
 
     if @test.save
       render :show
@@ -41,10 +41,6 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def set_test
-    @test = Test.new
   end
 
   def test_params
