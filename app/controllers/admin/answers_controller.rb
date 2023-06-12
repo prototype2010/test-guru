@@ -11,10 +11,11 @@ class Admin::AnswersController < Admin::BaseController
   def edit; end
 
   def create
-    @answer = Answer.new(**answer_params, question: @question)
+    @answer = Answer.new(answer_params)
+    @answer.question = @question
 
     if @answer.save
-      redirect_to admin_question_path(@answer.question), notice: 'Answer was successfully created.'
+      redirect_to admin_answer_path(@answer), notice: 'Answer was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
