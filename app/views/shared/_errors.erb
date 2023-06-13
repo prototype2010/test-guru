@@ -1,5 +1,5 @@
 <% if resource.errors.size > 0 %>
-<p> There are <%= pluralize(resource.errors.size, 'error') %> </p>
+<p> <%= t('.header', count: resource.errors.size) %> </p>
   <ul>
     <% resource.errors.full_messages.each do |error| %>
     <li><%= error %></li>
