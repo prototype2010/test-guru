@@ -1,19 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  helper_method :current_user, :logged_in?
+  before_action :configure_sign_in_params, if: :devise_controller?
 
-  def authenticate_user!
-    return if current_user
+  private
 
-    cookies[:redirect_path] = request.path
-    redirect_to new_session_path, alert: 'Sing in required for this path'
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(Admin)
+      admin_tests_path
+    else
+      root_path
+    end
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def configure_sign_in_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
   end
 end

@@ -1,0 +1,6 @@
+
+<p><%= @answer.body %></p>
+
+<%= button_to 'Back', admin_question_path(@answer.question), method: :get %>
+<%= button_to 'Edit', edit_admin_answer_path(@answer) %>
+<%= button_to 'Delete', admin_answer_path(@answer.question), method: :delete %>
