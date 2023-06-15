@@ -44,6 +44,12 @@ en:
       actions: 'Действия'
       createNew: 'Создать новый тест'
   shared:
+    navbar:
+      logout: 'Выйти'
+      signin: 'Войти'
+      signup: 'Зарегистрироватся'
+      title: 'Тест Гуру'
+      greeting: 'Добро пожаловать %{email} гуру'
     errors:
       header:
         few: 'Обнаружено %{count} ошибки'

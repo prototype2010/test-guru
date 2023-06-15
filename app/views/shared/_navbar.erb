@@ -1,16 +1,26 @@
-  <nav class="nav-container">
-    <a style="color: #2E2F30" href="<%= root_path %>">
-      <h1>
-        <%= t('.header') %>
-      </h1>
-    </a>
-    <span class="nav-container">
+  <nav class="navbar bg-light">
+    <div class="row nav">
+      <div class="nav-item">
+        <a class="nav-link active" href="<%= user_signed_in? ? root_path : '#' %>">
+          <h3>
+            <%= t('.title') %>
+          </h3>
+        </a>
+      </div>
+    </div>
+
+    <span class="row flex-direction-row">
       <% if user_signed_in? %>
-        <span class="nav user"><%= t('.greeting', email: current_user.email) %></span>
-        <%= button_to t('.logout'), destroy_user_session_path, method: :delete %>
+        <span class="mr-5 mt-2">
+          <%= t('.greeting', email: current_user.email) %>
+        </span>
+        <%= button_to t('.logout'),
+                      destroy_user_session_path,
+                      method: :delete,
+                      class: 'btn btn-primary  mr-4' %>
       <% else %>
-        <%= link_to t('.signin'), new_user_session_path, class: 'nav user' %>
-        <%= link_to t('.signup'), new_user_registration_path %>
+        <%= link_to t('.signin'), new_user_session_path, class: 'btn btn-primary  mr-4' %>
+        <%= link_to t('.signup'), new_user_registration_path, class: 'btn btn-primary mr-4' %>
       <% end %>
     </span>
   </nav>

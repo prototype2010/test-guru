@@ -44,6 +44,12 @@ en:
       actions: 'Actions'
       createNew: 'Create new test'
   shared:
+    navbar:
+      logout: 'Logout'
+      signin: 'Login'
+      signup: 'Signup'
+      title: 'Test guru'
+      greeting: 'Welcome %{email} guru'
     errors:
       header:
         one: '%{count} error detected'
