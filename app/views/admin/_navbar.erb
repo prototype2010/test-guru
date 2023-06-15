@@ -1,16 +1,16 @@
   <nav class="nav-container">
     <a style="color: #2E2F30" href="<%= root_path %>">
       <h1>
-        Admin Panel | Test guru
+        <%= t('.title') %>
       </h1>
     </a>
     <span class="nav-container">
       <% if user_signed_in? %>
-        <span class="nav user">Welcome <%= current_user.email %> guru</span>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+        <span class="nav user"><%= t('.greeting', email: current_user.email) %></span>
+        <%= button_to t('.logout'), destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Signin', new_user_session_path, class: 'nav user' %>
-        <%= link_to 'Singup', new_user_registration_path %>
+        <%= link_to t('.signin'), new_user_session_path, class: 'nav user' %>
+        <%= link_to t('.signup'), new_user_registration_path %>
       <% end %>
     </span>
   </nav>

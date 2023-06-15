@@ -1,33 +1,55 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      test:
+        create: 'Create new test'
+        update: 'Update test'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category: 'Category'
+        category_id: 'Category'
+  admin:
+    navbar:
+      logout: 'Logout'
+      signin: 'Login'
+      signup: 'Signup'
+      title: 'Admin Panel | Test guru'
+      greeting : 'Welcome %{email} guru'
+    tests:
+      test:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        deleteConfirmation: 'Are you sure ?'
+      index:
+        tests: 'All tests'
+        title: 'Title'
+        category: 'Category'
+        actions: 'Actions'
+        create: 'Create new test'
+      show:
+        backToAllTests: 'Back to all tests'
+        createQuestion: 'Create question'
+  tests:
+    test:
+      start: 'Start'
+    index:
+      tests: 'All tests'
+      title: 'Title'
+      category: 'Category'
+      actions: 'Actions'
+      createNew: 'Create new test'
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+    footer:
+      description: 'Pet project in Thinknetica'
+  tests_mailer:
+    completed_test:
+      subject: 'You have just finished the test'

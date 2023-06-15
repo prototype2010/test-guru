@@ -2,6 +2,6 @@
 <br/>
 <label>Category: <%= @test.category.title %></label>
 <%= render 'questions/questions_table', resource: @test.questions %>
-<%= link_to 'create question', new_admin_test_question_path(@test) %>
+<%= link_to t('.createQuestion'), new_admin_test_question_path(@test) %>
 <br/>
-<%= link_to 'back to all tests', admin_tests_path %>
+<%= link_to t('.backToAllTests'), admin_tests_path %>

@@ -1,0 +1,54 @@
+en:
+  helpers:
+    select:
+      prompt: "Выберите из списка"
+    submit:
+      test:
+        create: 'Создать новый тест'
+        update: 'Обновить данные теста'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+        category_id: 'Категория'
+  admin:
+    navbar:
+      logout: 'Выйти'
+      signin: 'Войти'
+      signup: 'Зарегистрироватся'
+      title: 'Панель администратора | Тест Гуру'
+      greeting : 'Добро пожаловать %{email} гуру'
+    tests:
+      test:
+        show: 'Показать'
+        edit: 'Изменить'
+        delete: 'Удалить'
+        deleteConfirmation: 'Вы уверены ?'
+      index:
+        tests: 'Все тесты'
+        title: 'Название'
+        category: 'Категория'
+        actions: 'Действия'
+        create: 'Создать новый тест'
+      show:
+        backToAllTests: 'Вернутся ко всем тестм'
+        createQuestion: 'Создать тест'
+  tests:
+    test:
+      start: 'Начать'
+    index:
+      tests: 'Все тесты'
+      title: 'Название'
+      category: 'Категория'
+      actions: 'Действия'
+      createNew: 'Создать новый тест'
+  shared:
+    errors:
+      header:
+        few: 'Обнаружено %{count} ошибки'
+        many: 'Обнаружено %{count} ошибок'
+        one: 'Обнаружено %{count} ошибка'
+        other: 'Обнаружено %{count} ошибки'
+    footer:
+      description: 'Учебный проект в онлайн-школе Thinknetica'

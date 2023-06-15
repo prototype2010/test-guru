@@ -1,11 +1,11 @@
-<label>Tests</label>
+<label><%= t('.tests') %></label>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Category</th>
-    <th colspan="4">Actions</th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.category') %></th>
+    <th colspan="4"><%= t('.actions') %></th>
   </tr>
 
   <%= render @tests  %>
 </table>
-<%= link_to 'Create new test', new_admin_test_path %>
+<%= link_to t('.create'), new_admin_test_path %>

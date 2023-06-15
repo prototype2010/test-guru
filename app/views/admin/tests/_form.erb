@@ -10,8 +10,8 @@
   <%= form.label :level %>
   <%= form.number_field :level, min: 1, value: @test.new_record? ? 1 : @test.level %>
   <br/>
-  <%= form.label :category_id, 'Category' %>
+  <%= form.label :category_id %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @test.new_record? %>
   <br/>
-  <%= form.submit @test.new_record? ? 'Create new test' : 'Update' %>
+  <%= form.submit %>
 <% end %>
