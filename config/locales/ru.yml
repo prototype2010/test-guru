@@ -1,4 +1,4 @@
-en:
+ru:
   helpers:
     select:
       prompt: "Выберите из списка"
@@ -58,3 +58,6 @@ en:
         other: 'Обнаружено %{count} ошибки'
     footer:
       description: 'Учебный проект в онлайн-школе Thinknetica'
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что прошли тест !'

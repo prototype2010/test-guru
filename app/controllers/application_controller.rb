@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_sign_in_params, if: :devise_controller?
 
   def default_url_options
-    return {} if request.params[:locale] == I18n.locale
+    flash[:alert] = "Current locale is #{request.params[:locale]}"
+
+    # return {} if request.params[:locale] == I18n.locale
 
     { locale: I18n.locale }
   end
