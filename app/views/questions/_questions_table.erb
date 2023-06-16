@@ -4,13 +4,17 @@
   <p>There are <%= pluralize(resource.count, 'question') %> in this test so far</p>
 <% end %>
 <table>
-  <tr>
-    <th>
-      Questions
-    </th>
-    <th>
-      Actions
-    </th>
-  </tr>
-  <%= render resource %>
+  <thead>
+    <tr>
+      <th>
+        Questions
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render resource %>
+  </tbody>
 </table>

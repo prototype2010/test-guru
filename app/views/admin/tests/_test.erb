@@ -1,18 +1,18 @@
 <tr>
-  <td>
+  <th scope="row">
     <%= test.title  %>
-  </td>
+  </th>
   <td>
     <%= test.category.title %>
   </td>
   <td>
-  <td><%= link_to t('.show'), admin_test_path(test) %></td>
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
-  <td><%= link_to t('.delete'),
-                  admin_test_path(test),
-                  method: :delete,
-                  data: {
-                    confirm: t('.deleteConfirmation'),
-                  }    %></td>
+    <%= link_to t('.show'), admin_test_path(test) %>
+    <%= link_to t('.edit'), edit_admin_test_path(test) %>
+    <%= link_to t('.delete'),
+                    admin_test_path(test),
+                    method: :delete,
+                    data: {
+                      confirm: t('.deleteConfirmation'),
+                    }    %>
   </td>
 </tr>
