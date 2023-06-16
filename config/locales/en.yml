@@ -34,6 +34,10 @@ en:
       show:
         backToAllTests: 'Back to all tests'
         createQuestion: 'Create question'
+  test_passages:
+    gist:
+      success: 'Gist was successfully posted'
+      failure: 'Failed to post gist'
   tests:
     test:
       start: 'Start'
