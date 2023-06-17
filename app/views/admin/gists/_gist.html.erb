@@ -1,0 +1,11 @@
+<tr>
+  <th scope="row">
+    <a href="<%= admin_question_path(gist.question)%>">
+      <%= short_question_format(gist.question.body) %>
+    </a>
+  </th>
+  <td>
+    <a href="<%= gist.url %>" target="_blank"><%= gist.url %></a>
+  </td>
+  <td><%= gist.user.email %></td>
+</tr>

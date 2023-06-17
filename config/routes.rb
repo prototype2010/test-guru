@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'gists/index'
   devise_for :users,
              path: :gurus,
              path_names: { sign_in: :login, sign_out: :logout },
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true, except: %i[index] do
         resources :answers, shallow: true, except: %i[index]

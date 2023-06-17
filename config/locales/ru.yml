@@ -13,6 +13,12 @@ ru:
         category: 'Категория'
         category_id: 'Категория'
   admin:
+    gists:
+      index:
+        gists: 'Гисты'
+        question: 'Вопрос'
+        url: 'УРЛ'
+        user: 'Юзер'
     navbar:
       logout: 'Выйти'
       signin: 'Войти'
@@ -36,7 +42,7 @@ ru:
         createQuestion: 'Создать тест'
   test_passages:
     gist:
-      success: 'Гист размещён'
+      success: 'Гист размещён. Ссылка %{url}'
       failure: 'Не удалось разместить гист'
   tests:
     test:

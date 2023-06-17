@@ -13,6 +13,12 @@ en:
         category: 'Category'
         category_id: 'Category'
   admin:
+    gists:
+      index:
+        gists: 'Gists'
+        question: 'Question'
+        url: 'URL'
+        user: 'User'
     navbar:
       logout: 'Logout'
       signin: 'Login'
@@ -36,7 +42,7 @@ en:
         createQuestion: 'Create question'
   test_passages:
     gist:
-      success: 'Gist was successfully posted'
+      success: 'Gist was successfully posted. Url is %{url}'
       failure: 'Failed to post gist'
   tests:
     test:
