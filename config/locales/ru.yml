@@ -25,6 +25,7 @@ ru:
       signup: 'Зарегистрироватся'
       title: 'Панель администратора | Тест Гуру'
       greeting : 'Добро пожаловать %{email} гуру'
+      gists: 'Гисты'
     tests:
       test:
         show: 'Показать'
@@ -40,10 +41,6 @@ ru:
       show:
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'
-  test_passages:
-    gist:
-      success: 'Гист размещён. Ссылка %{url}'
-      failure: 'Не удалось разместить гист'
   tests:
     test:
       start: 'Начать'
@@ -53,6 +50,10 @@ ru:
       category: 'Категория'
       actions: 'Действия'
       createNew: 'Создать новый тест'
+  gists:
+    create:
+      success: 'Гист размещён. Ссылка %{url}'
+      failure: 'Не удалось разместить гист'
   shared:
     navbar:
       logout: 'Выйти'

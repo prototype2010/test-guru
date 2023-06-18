@@ -25,6 +25,7 @@ en:
       signup: 'Signup'
       title: 'Admin Panel | Test guru'
       greeting : 'Welcome %{email} guru'
+      gists: 'Gists'
     tests:
       test:
         show: 'Show'
@@ -40,10 +41,6 @@ en:
       show:
         backToAllTests: 'Back to all tests'
         createQuestion: 'Create question'
-  test_passages:
-    gist:
-      success: 'Gist was successfully posted. Url is %{url}'
-      failure: 'Failed to post gist'
   tests:
     test:
       start: 'Start'
@@ -53,6 +50,10 @@ en:
       category: 'Category'
       actions: 'Actions'
       createNew: 'Create new test'
+  gists:
+    create:
+      success: 'Gist was successfully posted. Url is %{url}'
+      failure: 'Failed to post gist'
   shared:
     navbar:
       logout: 'Logout'

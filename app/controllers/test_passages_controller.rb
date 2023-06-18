@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show update result gist]
+  before_action :set_test_passage, only: %i[show update result]
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -15,17 +15,6 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result; end
-
-  def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-
-    if result.status == 201
-      Gist.create(user: current_user, url: result.data.url, question: @test_passage.current_question)
-      redirect_to test_passage_path(@test_passage), { notice: t('.success', url: result.data.url) }
-    else
-      redirect_to test_passage_path(@test_passage), { notice: t('.failure') }
-    end
-  end
 
   private
 
