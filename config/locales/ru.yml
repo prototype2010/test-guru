@@ -13,12 +13,19 @@ ru:
         category: 'Категория'
         category_id: 'Категория'
   admin:
+    gists:
+      index:
+        gists: 'Гисты'
+        question: 'Вопрос'
+        url: 'УРЛ'
+        user: 'Юзер'
     navbar:
       logout: 'Выйти'
       signin: 'Войти'
       signup: 'Зарегистрироватся'
       title: 'Панель администратора | Тест Гуру'
       greeting : 'Добро пожаловать %{email} гуру'
+      gists: 'Гисты'
     tests:
       test:
         show: 'Показать'
@@ -43,6 +50,10 @@ ru:
       category: 'Категория'
       actions: 'Действия'
       createNew: 'Создать новый тест'
+  gists:
+    create:
+      success: 'Гист размещён. Ссылка %{url}'
+      failure: 'Не удалось разместить гист'
   shared:
     navbar:
       logout: 'Выйти'

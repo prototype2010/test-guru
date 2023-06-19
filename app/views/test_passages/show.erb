@@ -13,5 +13,7 @@
       <%= check.label %>
     </p>
   <% end %>
+  <%= link_to 'Gist question', gists_path(@test_passage, test_passage: @test_passage.id), method: :post %>
+  <br/>
   <%= form.submit 'Next' %>
 <% end %>

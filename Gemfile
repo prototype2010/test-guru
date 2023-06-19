@@ -33,12 +33,16 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rails-i18n'
 
 # twitter bootstrap
-gem  'jquery-rails'
+gem 'jquery-rails'
 gem 'bootstrap', '~> 4.6.2'
+#github api
+gem "octokit", "~> 6.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # .env lib
+  gem 'dotenv-rails'
 end
 
 group :development do

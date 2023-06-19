@@ -13,11 +13,19 @@
             <span class="container justify-content-between">
               <% if user_signed_in? %>
               <span><%= t('.greeting', email: current_user.email) %></span>
+
+                <%= link_to t('.gists'),
+                              admin_gists_path,
+                              type: :button,
+                              method: :get,
+                              class: 'btn btn-primary ml-4' %>
+
                 <%= button_to t('.logout'),
                               destroy_user_session_path,
                               method: :delete,
                               type: :button,
                               class: 'btn btn-primary ml-4' %>
+
               <% else %>
                 <%= link_to t('.signin'), new_user_session_path, class: 'nav user' %>
                 <%= link_to t('.signup'), new_user_registration_path %>

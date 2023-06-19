@@ -1,0 +1,13 @@
+<label><%= t('.gists') %></label>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><%= t('.question') %></th>
+      <th scope="col"><%= t('.url') %></th>
+      <th scope="col"><%= t('.user') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists  %>
+  </tbody>
+</table>

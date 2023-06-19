@@ -13,12 +13,19 @@ en:
         category: 'Category'
         category_id: 'Category'
   admin:
+    gists:
+      index:
+        gists: 'Gists'
+        question: 'Question'
+        url: 'URL'
+        user: 'User'
     navbar:
       logout: 'Logout'
       signin: 'Login'
       signup: 'Signup'
       title: 'Admin Panel | Test guru'
       greeting : 'Welcome %{email} guru'
+      gists: 'Gists'
     tests:
       test:
         show: 'Show'
@@ -43,6 +50,10 @@ en:
       category: 'Category'
       actions: 'Actions'
       createNew: 'Create new test'
+  gists:
+    create:
+      success: 'Gist was successfully posted. Url is %{url}'
+      failure: 'Failed to post gist'
   shared:
     navbar:
       logout: 'Logout'
