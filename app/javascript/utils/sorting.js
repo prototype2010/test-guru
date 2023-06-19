@@ -31,25 +31,21 @@ const sortByTableHeader = (e) => {
     }
 
     const sortedRows = sortTableRows(dataRows, sortHeaderIndex, nextDirection)
-
     const newTable = document.createElement('table')
     newTable.append(rows[0], ...sortedRows)
     newTable.classList.add(...table.classList)
     table.parentNode.replaceChild(newTable, table)
 }
 
-const sortTableRows = (rows, indexToSortBy, direction) => {
+const sortTableRows = (rows, indexToSortBy, direction) => rows.sort((row1, row2) => {
+    const row1Text = row1.querySelectorAll('td')[indexToSortBy].innerText
+    const row2Text = row2.querySelectorAll('td')[indexToSortBy].innerText
 
-    return rows.sort((row1, row2) => {
-        const row1Text = row1.querySelectorAll('td')[indexToSortBy].innerText
-        const row2Text = row2.querySelectorAll('td')[indexToSortBy].innerText
-
-        if(row1Text > row2Text) {
-            return direction === 'asc' ? 1 : -1
-        } else if(row1Text < row2Text) {
-            return direction === 'asc' ? -1 : 1
-        } else {
-            return 0
-        }
-    })
-}
+    if(row1Text > row2Text) {
+        return direction === 'asc' ? 1 : -1
+    } else if(row1Text < row2Text) {
+        return direction === 'asc' ? -1 : 1
+    } else {
+        return 0
+    }
+});
