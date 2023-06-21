@@ -32,9 +32,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # localization
 gem 'rails-i18n'
 
-# twitter bootstrap
+# UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.6.2'
+gem 'octicons_helper'
 #github api
 gem "octokit", "~> 6.1"
 
