@@ -41,6 +41,8 @@ en:
       show:
         backToAllTests: 'Back to all tests'
         createQuestion: 'Create question'
+      form_inline:
+        submit: 'OK'
   tests:
     test:
       start: 'Start'
