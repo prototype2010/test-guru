@@ -41,6 +41,8 @@ ru:
       show:
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'
+      form_inline:
+        submit: 'OK'
   tests:
     test:
       start: 'Начать'
