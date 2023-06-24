@@ -67,6 +67,21 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'https://stormy-cove-48152-c3d8c4543b67.herokuapp.com/ '}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 587,
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auth: true
+  }
+  #SMTP hostname: smtp.mailgun.org
+  # Port: 587 (recommended)
+  # Username: postmaster@sandboxebaad54404ab47faa2b639e76c815c71.mailgun.org
+  # Default password:
+  # 4f656623d74c9e448730493c8e6188ee-135a8d32-8d0eba5b
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
