@@ -70,7 +70,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://stormy-cove-48152-c3d8c4543b67.herokuapp.com/ '}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
+    address: 'smtp-relay.sendinblue.com',
     port: 587,
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
