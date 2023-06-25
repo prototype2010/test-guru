@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1, user2 = User.create!([
-                              { name: 'My name 1', password: rand(10..100).to_s, email: "#{rand(50..100)}@gmail.com" },
-                              { name: 'My name 2', password: rand(10..100).to_s, email: "#{rand(1..50)}@gmail.com" }
+                              { first_name: 'My name 1', last_name: 'Last name 1', password: 111111.to_s, email: "1@gmail.com" },
+                              { first_name: 'My name 2', last_name: 'Last name 2',password: 111111.to_s, email: "2@gmail.com" }
                             ])
 
 category1, category2 = Category.create!([
