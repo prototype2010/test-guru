@@ -1,4 +1,5 @@
 <h2>Test passage <%= @test_passage.test.title %> </h2>
+<%= render 'shared/progress_bar', resource: test_passage_progress(@test_passage) %>
 <p>Question №<%= @test_passage.question_number %> out of <%= @test_passage.test.questions.count %></p>
 <p><%= @test_passage.current_question.body %></p>
 
