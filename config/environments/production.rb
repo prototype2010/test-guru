@@ -67,7 +67,7 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'https://stormy-cove-48152-c3d8c4543b67.herokuapp.com/ '}
+  config.action_mailer.default_url_options = { host: 'https://calm-eyrie-21610-fc4553a1169d.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp-relay.sendinblue.com',
