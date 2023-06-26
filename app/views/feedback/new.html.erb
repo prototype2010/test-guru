@@ -1,0 +1,5 @@
+<%= form_with url: feedback_index_path, method: :post do |form|%>
+  <%= form.label t('.label') %>
+  <%= form.text_area t('.text_field_label'), name: 'feedback[body]', size: '50x5'  %>
+  <%= form.submit t('.submit') %>
+<% end %>
