@@ -43,6 +43,14 @@ ru:
         createQuestion: 'Создать тест'
       form_inline:
         submit: 'OK'
+  feedback:
+    feedback_successful:
+      thanks: 'Спасибо за отзыв'
+      return_to_tests: 'На страницу тестов'
+    new:
+      submit: 'Оставить отзыв'
+      label: 'Что вы думаете о нашем приложении ?'
+      text_field_label: 'Напишите свой отзыв здесь'
   tests:
     test:
       start: 'Начать'
@@ -62,6 +70,7 @@ ru:
       signin: 'Войти'
       signup: 'Зарегистрироватся'
       title: 'Тест Гуру'
+      feedback: 'Обратная связь'
       greeting: 'Добро пожаловать %{email} гуру'
     errors:
       header:

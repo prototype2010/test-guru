@@ -43,6 +43,14 @@ en:
         createQuestion: 'Create question'
       form_inline:
         submit: 'OK'
+  feedback:
+    feedback_successful:
+      thanks: 'Thanks for feedback'
+      return_to_tests: 'To all tests'
+    new:
+      submit: 'Submit your feedback'
+      label: 'What do you think about our platform ?'
+      text_field_label: 'Type your feedback here'
   tests:
     test:
       start: 'Start'
@@ -62,6 +70,7 @@ en:
       signin: 'Login'
       signup: 'Signup'
       title: 'Test guru'
+      feedback: 'Give us feedback'
       greeting: 'Welcome %{email} guru'
     errors:
       header:
