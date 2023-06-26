@@ -77,11 +77,6 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auth: true
   }
-  #SMTP hostname: smtp.mailgun.org
-  # Port: 587 (recommended)
-  # Username: postmaster@sandboxebaad54404ab47faa2b639e76c815c71.mailgun.org
-  # Default password:
-  # 4f656623d74c9e448730493c8e6188ee-135a8d32-8d0eba5b
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
