@@ -119,7 +119,7 @@ ru:
       createNew: 'Создать новый тест'
   gists:
     create:
-      success: 'Гист размещён. Ссылка %{url}'
+      success: 'Гист размещён. Ссылка <a href="%{url}" target="_blank">%{url}</a>'
       failure: 'Не удалось разместить гист'
   shared:
     navbar:
@@ -141,6 +141,34 @@ ru:
     completed_test:
       subject: 'Вы только что прошли тест !'
   devise:
+    mailer:
+      unlock_instructions:
+        hello: 'Привет'
+        locked: 'Ваш аккаунт заблокирован из-за большого количества неудачных попыток входа'
+        unlock: 'Перейдите по ссылке чтобы разблокировать аккаунт:'
+        unlock_link: 'Разблокировать аккаунт'
+      reset_password_instructions:
+        hello: 'Привет'
+        change_requested: 'Кто-то запросил смену пароля для вашего аккаунта. Чтобы сменить - перейдите по ссылке ниже'
+        ignore: "Если это были не вы - игнорируйте это сообщение"
+        password_wont_change: "Ваш пароль не будет изменён до тех пор пока вы не перейдёте по ссылке вышею"
+        change_my_password: 'Изменить пароль'
+      password_change:
+        hello: 'Привет'
+        changed: "Ваш пароль был изменён"
+      email_changed:
+        hello: 'Привет'
+        is_changing: "Ваш пароль в процессе изменения"
+        changed: "Ваш почтовый ящик был изменён на"
+      confirmation_instructions:
+        welcome: 'Добро пожаловать'
+        confirm_by_link: 'Вы можете подтвердить ваш аакаунт перейдя по ссылке ниже:'
+        confirm: 'подтвердить мой аккаунт'
+    confirmations:
+      new:
+        title: 'Выслать инструкции подтверждения'
+        email: 'Имейл'
+        resend: 'Выслать иструкции подтверждения'
     sessions:
       new:
         title: 'Войти'
@@ -149,6 +177,21 @@ ru:
         remember_me: 'Запомнить'
         log_in_button: 'Войти'
     registrations:
+      edit:
+        edit: 'Редактировать'
+        email: 'Имейл'
+        waiting_confirmations: 'На данный омент ожидается подтверждения: '
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        update: 'Обновить'
+        cancel: 'Отменить мой аккаунт'
+        unhappy: 'Недовольны ?'
+        back: 'Назад'
+        leave_blank: "Оставьте пустым если не хотите менять"
+        min_characters: 'Минимальное количество символов'
       new:
         title: 'Регистрация'
         label: 'Имейл'

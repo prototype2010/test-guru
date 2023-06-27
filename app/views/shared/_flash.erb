@@ -1,4 +1,6 @@
 <% flash.each do |key, message| %>
-  <%= content_tag :p, message, class: "alert alert-#{flash_class_by_type(key)}", role:"alert" %>
-<% end  %>
+  <p class="alert alert-<%= flash_class_by_type(key) %>" role="alert">
+    <%= message.html_safe %>
+  </p>
+<% end %>
 
