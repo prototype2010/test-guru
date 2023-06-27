@@ -12,7 +12,58 @@ ru:
         level: 'Уровень'
         category: 'Категория'
         category_id: 'Категория'
+  layouts:
+    admin:
+      title: 'Панель администратора | TestGuru'
+    application:
+      title: 'Тест Гуру'
+  test_passages:
+    result:
+      result: 'Результат прохождения'
+      success: 'Тест пройден успешно'
+      fail: 'Тест провален'
+      to_all_tests: 'Ко всем тестам'
+    show:
+      test_passage: 'Прохождение теста'
+      question_number: 'Вопрос № %{current} из %{total}'
+      gist_question: 'Сделать гист'
+      next: 'Следующий'
   admin:
+    questions:
+      form:
+        submit: 'Отправить'
+      question:
+        show: 'Показать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены ?'
+      questions_table:
+        questions: 'Вопросы'
+        actions: 'Действия'
+        no_questions: 'Пока нет вопросов'
+        questions_count: 'Всего %{count} ответов в этом вопросе'
+      show:
+        test: 'Тест'
+        answers: 'Ответы'
+        create_new_answer: 'Добавить ответ'
+        back_to_test: 'Вернутся к тесту'
+    answers:
+      answer:
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      form:
+        answer_body: 'Тело ответа'
+        submit: 'Отправить'
+      edit:
+        title: 'Редактирование ответа'
+        back: 'Вернутся'
+      new:
+        title: 'Новый ответ'
+        back: 'Вернутся к вопросу'
+      show:
+        back: 'Вернутся'
+        edit: 'Редактировать'
+        delete: 'Удалить'
     gists:
       index:
         gists: 'Гисты'
@@ -27,6 +78,11 @@ ru:
       greeting : 'Добро пожаловать %{email} гуру'
       gists: 'Гисты'
     tests:
+      form:
+        label: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+        submit: 'Отправить'
       test:
         show: 'Показать'
         edit: 'Изменить'
@@ -39,6 +95,7 @@ ru:
         actions: 'Действия'
         create: 'Создать новый тест'
       show:
+        test: 'Тест'
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'
       form_inline:
@@ -83,3 +140,20 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли тест !'
+  devise:
+    sessions:
+      new:
+        title: 'Войти'
+        email: 'Имейл'
+        password: 'Пароль'
+        remember_me: 'Запомнить'
+        log_in_button: 'Войти'
+    registrations:
+      new:
+        title: 'Регистрация'
+        label: 'Имейл'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Повторите пароль'
+        sign_up_button: 'Зарегистрироватся'

@@ -4,14 +4,14 @@
              resource: @test,
              local: true
   %>
-  <%= form.label :title %>
+  <%= form.label t('.label') %>
   <%= form.text_field :title %>
   <br/>
-  <%= form.label :level %>
+  <%= form.label t('.level') %>
   <%= form.number_field :level, min: 1, value: @test.new_record? ? 1 : @test.level %>
   <br/>
-  <%= form.label :category_id %>
+  <%= form.label t('.category') %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @test.new_record? %>
   <br/>
-  <%= form.submit %>
+  <%= form.submit t('.submit') %>
 <% end %>

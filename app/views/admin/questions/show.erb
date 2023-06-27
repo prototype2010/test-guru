@@ -1,10 +1,10 @@
-<h3>Test `<%= @question.test.title %>`</h3>
+<h3><%= t('.test') %> `<%= @question.test.title %>`</h3>
 <div>
   <%= @question.body %>
 </div>
-<p>Answers</p>
+<p><%= t('.answers') %></p>
 <%= render @question.answers %>
 <br/>
 
-<%= link_to 'Create new answer', new_admin_question_answer_path(@question)  %>
-<%= link_to 'Back to test', admin_test_path(@question.test)  %>
+<%= link_to t('.create_new_answer'), new_admin_question_answer_path(@question)  %>
+<%= link_to t('.back_to_test'), admin_test_path(@question.test)  %>

@@ -1,11 +1,11 @@
-<h1>Result of passage <%= @test_passage.test.title %>:</h1>
+<h1><%= "#{t('.result') } #{@test_passage.test.title}:"%></h1>
 <p>
   <% if @test_passage.passed? %>
-    <span style="color: green">Test passed successfully</span>
+    <span style="color: green"><%= t('.success') %></span>
   <% else %>
-    <span style="color: red">Test failed</span>
+    <span style="color: red"><%= t('.fail') %></span>
   <% end %>
 </p>
 <p>
-  <%= link_to 'To all tests' ,tests_path %>
+  <%= link_to t('.to_all_tests') ,tests_path %>
 </p>
