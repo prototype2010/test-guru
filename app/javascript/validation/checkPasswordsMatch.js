@@ -19,7 +19,9 @@ class PasswordsMatchChecker {
     }
 
     listenFormChange = () => {
-        this.form.addEventListener('input', this.validate)
+        if(this.password && this.passwordConfirmation && this.helperText) {
+            this.form.addEventListener('input', this.validate)
+        }
     }
 
     validate = () => {
@@ -28,7 +30,7 @@ class PasswordsMatchChecker {
             return;
         }
 
-        if(this.passwordConfirmation.value !== this.password.value) {
+        if(this.passwordConfirmation?.value !== this.password.value) {
             this.helperText.innerText = 'Passwords do not match'
         } else {
             this.helperText.innerText = ''

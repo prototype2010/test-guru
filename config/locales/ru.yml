@@ -12,7 +12,58 @@ ru:
         level: 'Уровень'
         category: 'Категория'
         category_id: 'Категория'
+  layouts:
+    admin:
+      title: 'Панель администратора | TestGuru'
+    application:
+      title: 'Тест Гуру'
+  test_passages:
+    result:
+      result: 'Результат прохождения'
+      success: 'Тест пройден успешно'
+      fail: 'Тест провален'
+      to_all_tests: 'Ко всем тестам'
+    show:
+      test_passage: 'Прохождение теста'
+      question_number: 'Вопрос № %{current} из %{total}'
+      gist_question: 'Сделать гист'
+      next: 'Следующий'
   admin:
+    questions:
+      form:
+        submit: 'Отправить'
+      question:
+        show: 'Показать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены ?'
+      questions_table:
+        questions: 'Вопросы'
+        actions: 'Действия'
+        no_questions: 'Пока нет вопросов'
+        questions_count: 'Всего %{count} ответов в этом вопросе'
+      show:
+        test: 'Тест'
+        answers: 'Ответы'
+        create_new_answer: 'Добавить ответ'
+        back_to_test: 'Вернутся к тесту'
+    answers:
+      answer:
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      form:
+        answer_body: 'Тело ответа'
+        submit: 'Отправить'
+      edit:
+        title: 'Редактирование ответа'
+        back: 'Вернутся'
+      new:
+        title: 'Новый ответ'
+        back: 'Вернутся к вопросу'
+      show:
+        back: 'Вернутся'
+        edit: 'Редактировать'
+        delete: 'Удалить'
     gists:
       index:
         gists: 'Гисты'
@@ -27,6 +78,11 @@ ru:
       greeting : 'Добро пожаловать %{email} гуру'
       gists: 'Гисты'
     tests:
+      form:
+        label: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+        submit: 'Отправить'
       test:
         show: 'Показать'
         edit: 'Изменить'
@@ -39,10 +95,19 @@ ru:
         actions: 'Действия'
         create: 'Создать новый тест'
       show:
+        test: 'Тест'
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'
       form_inline:
         submit: 'OK'
+  feedback:
+    feedback_successful:
+      thanks: 'Спасибо за отзыв'
+      return_to_tests: 'На страницу тестов'
+    new:
+      submit: 'Оставить отзыв'
+      label: 'Что вы думаете о нашем приложении ?'
+      text_field_label: 'Напишите свой отзыв здесь'
   tests:
     test:
       start: 'Начать'
@@ -54,7 +119,7 @@ ru:
       createNew: 'Создать новый тест'
   gists:
     create:
-      success: 'Гист размещён. Ссылка %{url}'
+      success: 'Гист размещён. Ссылка <a href="%{url}" target="_blank">%{url}</a>'
       failure: 'Не удалось разместить гист'
   shared:
     navbar:
@@ -62,6 +127,7 @@ ru:
       signin: 'Войти'
       signup: 'Зарегистрироватся'
       title: 'Тест Гуру'
+      feedback: 'Обратная связь'
       greeting: 'Добро пожаловать %{email} гуру'
     errors:
       header:
@@ -74,3 +140,63 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли тест !'
+  devise:
+    mailer:
+      unlock_instructions:
+        hello: 'Привет'
+        locked: 'Ваш аккаунт заблокирован из-за большого количества неудачных попыток входа'
+        unlock: 'Перейдите по ссылке чтобы разблокировать аккаунт:'
+        unlock_link: 'Разблокировать аккаунт'
+      reset_password_instructions:
+        hello: 'Привет'
+        change_requested: 'Кто-то запросил смену пароля для вашего аккаунта. Чтобы сменить - перейдите по ссылке ниже'
+        ignore: "Если это были не вы - игнорируйте это сообщение"
+        password_wont_change: "Ваш пароль не будет изменён до тех пор пока вы не перейдёте по ссылке вышею"
+        change_my_password: 'Изменить пароль'
+      password_change:
+        hello: 'Привет'
+        changed: "Ваш пароль был изменён"
+      email_changed:
+        hello: 'Привет'
+        is_changing: "Ваш пароль в процессе изменения"
+        changed: "Ваш почтовый ящик был изменён на"
+      confirmation_instructions:
+        welcome: 'Добро пожаловать'
+        confirm_by_link: 'Вы можете подтвердить ваш аакаунт перейдя по ссылке ниже:'
+        confirm: 'подтвердить мой аккаунт'
+    confirmations:
+      new:
+        title: 'Выслать инструкции подтверждения'
+        email: 'Имейл'
+        resend: 'Выслать иструкции подтверждения'
+    sessions:
+      new:
+        title: 'Войти'
+        email: 'Имейл'
+        password: 'Пароль'
+        remember_me: 'Запомнить'
+        log_in_button: 'Войти'
+    registrations:
+      edit:
+        edit: 'Редактировать'
+        email: 'Имейл'
+        waiting_confirmations: 'На данный омент ожидается подтверждения: '
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        update: 'Обновить'
+        cancel: 'Отменить мой аккаунт'
+        unhappy: 'Недовольны ?'
+        back: 'Назад'
+        leave_blank: "Оставьте пустым если не хотите менять"
+        min_characters: 'Минимальное количество символов'
+      new:
+        title: 'Регистрация'
+        label: 'Имейл'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Повторите пароль'
+        sign_up_button: 'Зарегистрироватся'

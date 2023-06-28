@@ -3,5 +3,5 @@
 <%= form_with model: [:admin, @test, @question],
               local: true do |form| %>
   <%= form.text_field :body %>
-  <%= form.submit "Submit" %>
+  <%= form.submit t('.submit') %>
 <% end %>

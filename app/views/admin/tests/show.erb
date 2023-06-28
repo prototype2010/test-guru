@@ -1,4 +1,4 @@
-<label>Test `<%= @test.title %>`</label>
+<label><%= t('.test') %>> `<%= @test.title %>`</label>
 <br/>
 <label>Category: <%= @test.category.title %></label>
 <%= render 'questions/questions_table', resource: @test.questions %>

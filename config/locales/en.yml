@@ -12,7 +12,58 @@ en:
         level: 'Level'
         category: 'Category'
         category_id: 'Category'
+  layouts:
+    admin:
+      title: 'Admin Panel | TestGuru'
+    application:
+      title: 'Test Guru'
+  test_passages:
+    result:
+      result: 'Result of passage'
+      success: 'Test passed successfully'
+      fail: 'Test failed'
+      to_all_tests: 'To all tests'
+    show:
+      test_passage: 'Test passage'
+      question_number: 'Question № %{current} out of %{total}'
+      gist_question: 'Gist question'
+      next: 'Next'
   admin:
+    questions:
+      form:
+        submit: 'Submit'
+      question:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      questions_table:
+        questions: 'Questions'
+        actions: 'Actions'
+        no_questions: 'There are no questions yet'
+        questions_count: 'There are %{count} in this question so far'
+      show:
+        test: 'Test'
+        answers: 'Answers'
+        create_new_answer: 'Create new answer'
+        back_to_test: 'Back to test'
+    answers:
+      answer:
+        edit: 'Edit'
+        delete: 'Delete'
+      form:
+        answer_body: 'Answer body'
+        submit: 'Submit'
+      edit:
+        title: 'Editing answer'
+        back: 'Back'
+      new:
+        title: 'New answer'
+        back: 'Back to question'
+      show:
+        back: 'Back'
+        edit: 'Edit'
+        delete: 'Delete'
     gists:
       index:
         gists: 'Gists'
@@ -27,6 +78,11 @@ en:
       greeting : 'Welcome %{email} guru'
       gists: 'Gists'
     tests:
+      form:
+        label: 'label'
+        level: 'Level'
+        category: 'Category'
+        submit: 'Submit'
       test:
         show: 'Show'
         edit: 'Edit'
@@ -39,10 +95,19 @@ en:
         actions: 'Actions'
         create: 'Create new test'
       show:
+        test: 'Test'
         backToAllTests: 'Back to all tests'
         createQuestion: 'Create question'
       form_inline:
         submit: 'OK'
+  feedback:
+    feedback_successful:
+      thanks: 'Thanks for feedback'
+      return_to_tests: 'To all tests'
+    new:
+      submit: 'Submit your feedback'
+      label: 'What do you think about our platform ?'
+      text_field_label: 'Type your feedback here'
   tests:
     test:
       start: 'Start'
@@ -54,7 +119,7 @@ en:
       createNew: 'Create new test'
   gists:
     create:
-      success: 'Gist was successfully posted. Url is %{url}'
+      success: 'Gist was successfully posted. Url is <a href="%{url}" target="_blank">%{url}</a>'
       failure: 'Failed to post gist'
   shared:
     navbar:
@@ -62,6 +127,7 @@ en:
       signin: 'Login'
       signup: 'Signup'
       title: 'Test guru'
+      feedback: 'Give us feedback'
       greeting: 'Welcome %{email} guru'
     errors:
       header:
@@ -72,3 +138,63 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You have just finished the test'
+  devise:
+    mailer:
+      unlock_instructions:
+        hello: 'Hello'
+        locked: 'Your account has been locked due to an excessive number of unsuccessful sign in attempts.'
+        unlock: 'Click the link below to unlock your account:'
+        unlock_link: 'Unlock my account'
+      reset_password_instructions:
+        hello: 'Hello'
+        change_requested: 'Someone has requested a link to change your password. You can do this through the link below.'
+        ignore: "If you didn't request this, please ignore this email."
+        password_wont_change: "Your password won't change until you access the link above and create a new one."
+        change_my_password: 'Change my password'
+      password_change:
+        hello: 'Hello'
+        changed: "We're contacting you to notify you that your password has been changed."
+      email_changed:
+        hello: 'Hello'
+        is_changing: "We're contacting you to notify you that your email is being changed to"
+        changed: "We're contacting you to notify you that your email has been changed to"
+      confirmation_instructions:
+        welcome: 'Welcome'
+        confirm_by_link: 'You can confirm your account email through the link below:'
+        confirm: 'Confirm my account'
+    confirmations:
+      new:
+        title: 'Resend confirmation instructions'
+        email: 'Email'
+        resend: 'Resend confirmation instructions'
+    sessions:
+      new:
+        title: 'Log In'
+        email: 'Email'
+        password: 'Password'
+        remember_me: 'Remember me'
+        log_in_button: 'Log in'
+    registrations:
+      edit:
+        edit: 'Edit'
+        email: 'Email'
+        waiting_confirmations: 'Currently waiting confirmation for: '
+        first_name: 'First name'
+        last_name: 'Last name'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        current_password: 'Current password'
+        update: 'Update'
+        cancel: 'Cancel my account'
+        unhappy: 'Unhappy?'
+        back: 'Back'
+        leave_blank: "leave blank if you don't want to change it"
+        min_characters: 'characters minimum'
+      new:
+        title: 'Sign Up'
+        label: 'Label'
+        first_name: 'First name'
+        last_name: 'Last name'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        sign_up_button: 'Sing Up'

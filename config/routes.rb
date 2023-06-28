@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
+  resources :feedback, only: %i[new create show]
+
   resources :tests, only: :index do
     member do
       post :start

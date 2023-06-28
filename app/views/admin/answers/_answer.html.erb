@@ -1,4 +1,4 @@
 <p id="notice"><%= answer.body %><%= answer.correct ? '[correct]' : '' %>
-  <%= button_to 'Edit', edit_admin_answer_path(answer) %>
-  <%= button_to 'Delete', admin_answer_path(answer), method: :delete, confirm: 'Are you sure ?' %>
+  <%= button_to t('.edit'), edit_admin_answer_path(answer) %>
+  <%= button_to t('.delete'), admin_answer_path(answer), method: :delete, confirm: 'Are you sure ?' %>
 </p>
