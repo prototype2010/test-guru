@@ -79,6 +79,7 @@ en:
       gists: 'Gists'
     tests:
       form:
+        time_limit: 'Time Limit'
         label: 'label'
         level: 'Level'
         category: 'Category'
@@ -90,6 +91,7 @@ en:
         deleteConfirmation: 'Are you sure ?'
       index:
         tests: 'All tests'
+        time_limit: 'Time Limit'
         title: 'Title'
         category: 'Category'
         actions: 'Actions'
@@ -112,6 +114,7 @@ en:
     test:
       start: 'Start'
     index:
+      time_limit: 'Time Limit'
       tests: 'All tests'
       title: 'Title'
       category: 'Category'
