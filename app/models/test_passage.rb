@@ -6,8 +6,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question, on: %i[create update]
+  before_create :set_end_time
 
   def accept!(answer_ids)
+    return if out_of_time?
+    
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
@@ -19,6 +22,7 @@ class TestPassage < ApplicationRecord
 
   def completed?
     return false if new_record?
+    return true if out_of_time?
 
     current_question.nil? && find_next_question.nil?
   end
@@ -28,6 +32,14 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
+  def out_of_time?
+    end_time < Time.now
+  end
+
+  def set_end_time
+    self.end_time = Time.now + test.time_limit.minutes
+  end
 
   def find_next_question
     return test.questions.first if new_record?

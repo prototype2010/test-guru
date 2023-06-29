@@ -10,6 +10,9 @@
   <%= form.label t('.level') %>
   <%= form.number_field :level, min: 1, value: @test.new_record? ? 1 : @test.level %>
   <br/>
+  <%= form.label t('.time_limit') %>
+  <%= form.number_field :time_limit, min: 1, value: @test.new_record? ? 5 : @test.time_limit %>
+  <br/>
   <%= form.label t('.category') %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @test.new_record? %>
   <br/>

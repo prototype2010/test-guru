@@ -7,6 +7,9 @@
     <%= test.category.title %>
   </td>
   <td class="align-middle" >
+    <%= test.time_limit %>
+  </td>
+  <td class="align-middle" >
     <%= link_to t('.show'), admin_test_path(test) %>
     <%= link_to t('.edit'), edit_admin_test_path(test),
                 data: { test_id: test.id },

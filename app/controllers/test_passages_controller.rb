@@ -1,5 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result]
+  after_action :set_end_time_cookie, only: %i[show update]
+
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -12,11 +14,15 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def show; end
+  def show;end
 
   def result; end
 
   private
+
+  def set_end_time_cookie
+    cookies[:end_time] = @test_passage.end_time.to_time.iso8601
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

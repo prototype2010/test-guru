@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :level, uniqueness: { scope: :title,  message: 'Test with same title and level already exists' }
+  validates :time_limit, numericality: {only_integer: true, greater_than: 0}
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }

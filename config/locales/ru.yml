@@ -79,6 +79,7 @@ ru:
       gists: 'Гисты'
     tests:
       form:
+        time_limit: 'Время на прохождение'
         label: 'Название'
         level: 'Уровень'
         category: 'Категория'
@@ -89,12 +90,14 @@ ru:
         delete: 'Удалить'
         deleteConfirmation: 'Вы уверены ?'
       index:
+        time_limit: 'Время на прохождение'
         tests: 'Все тесты'
         title: 'Название'
         category: 'Категория'
         actions: 'Действия'
         create: 'Создать новый тест'
       show:
+        edit: 'Редактировать тест'
         test: 'Тест'
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'
@@ -112,6 +115,7 @@ ru:
     test:
       start: 'Начать'
     index:
+      time_limit: 'Время на прохождение'
       tests: 'Все тесты'
       title: 'Название'
       category: 'Категория'

@@ -2,8 +2,11 @@
 <%= render 'shared/progress_bar', resource: test_passage_progress(@test_passage) %>
 <p><%= t('.question_number', current: @test_passage.question_number, total: @test_passage.test.questions.count) %></p>
 <p><%= @test_passage.current_question.body %></p>
+<p>
+  Time left: <span id='timer' style="color: red"></span>
+</p>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, html: {name: :answer}, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids,
                                   @test_passage.current_question.answers,
                                   :id,
