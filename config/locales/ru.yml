@@ -97,6 +97,7 @@ ru:
         actions: 'Действия'
         create: 'Создать новый тест'
       show:
+        edit: 'Редактировать тест'
         test: 'Тест'
         backToAllTests: 'Вернутся ко всем тестм'
         createQuestion: 'Создать тест'

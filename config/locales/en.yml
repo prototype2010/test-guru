@@ -97,6 +97,7 @@ en:
         actions: 'Actions'
         create: 'Create new test'
       show:
+        edit: 'Edit test'
         test: 'Test'
         backToAllTests: 'Back to all tests'
         createQuestion: 'Create question'

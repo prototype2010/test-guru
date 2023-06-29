@@ -1,4 +1,8 @@
-<label><%= t('.test') %>> `<%= @test.title %>`</label>
+<label>
+  <%= t('.test') %> `<%= @test.title %>`
+</label>
+<br/>
+<%= link_to t('.edit'), edit_admin_test_path(@test) %>
 <br/>
 <label>Category: <%= @test.category.title %></label>
 <%= render 'admin/questions/questions_table', resource: @test.questions %>
