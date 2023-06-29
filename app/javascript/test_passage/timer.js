@@ -23,7 +23,7 @@ function checkTestTime() {
 
 	setInterval(() => {
 		if(isOutOfTime(endTime)) {
-			redirectToResult()
+			submit()
 		} else {
 			const currentTime = new Date().getTime()
 			timerNode.textContent = millisecondsToReadableFormat(endTime - currentTime)
@@ -37,10 +37,8 @@ function isOutOfTime(endTime) {
 	return currentTime > endTime
 }
 
-function redirectToResult(){
-	const {pathname, search} = window.location
-
-	window.location.href = `${pathname}/result${search}`
+function submit(){
+	document.querySelector('form[name="answer"]')?.submit()
 }
 
 function millisecondsToReadableFormat(ms) {
