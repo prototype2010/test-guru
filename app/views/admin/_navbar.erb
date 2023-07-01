@@ -20,6 +20,12 @@
                               method: :get,
                               class: 'btn btn-primary ml-4' %>
 
+                <%= link_to t('.badges'),
+                              admin_badges_path,
+                              type: :button,
+                              method: :get,
+                              class: 'btn btn-primary ml-4' %>
+
                 <%= button_to t('.logout'),
                               destroy_user_session_path,
                               method: :delete,

@@ -1,0 +1,29 @@
+<label><%= form_badge_header(@badge) %></label>
+<%= render 'shared/errors', resource: @badge %>
+<%= form_with model: [:admin, @badge],
+              local: true do |form| %>
+
+  <%= form.label 'Name' %>
+  <%= form.text_field :name %>
+  <br/>
+
+  <%= form.label 'Url' %>
+  <%= form.text_field :url %>
+  <br/>
+
+  <%= form.label 'Description' %>
+  <%= form.text_field :description %>
+  <br/>
+
+  <%= form.label 'Circumstance' %>
+  <%= form.select :circumstance, circumstance_select_options %>
+  <br/>
+
+  <%= form.label 'Category' %>
+  <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @badge.new_record? %>
+  <br/>
+
+
+  <%= form.submit 'Submit' %>
+  <%= link_to 'Back to all badges', admin_badges_path %>
+<% end %>

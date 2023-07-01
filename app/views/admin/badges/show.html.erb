@@ -1,0 +1,10 @@
+<h1>Badge <%= @badge.name %></h1>
+<label>Icon: <%= @badge.url %></label>
+<br/>
+<label>Description: <%= @badge.description %></label>
+<br/>
+<label>Category: <%= @badge.category&.title || 'None selected' %></label>
+<br/>
+<label>Circumstance: <%= from_index_to_readable(@badge.circumstance) %></label>
+<br/>
+<%= link_to 'Back to all badges', admin_badges_path %>

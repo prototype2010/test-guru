@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   resources :feedback, only: %i[new create show]
+  resources :badges, only: :show
 
   resources :tests, only: :index do
     member do
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   resources :gists, only: :create
 
   namespace :admin do
+    resources :badges
     resources :gists, only: %i[index]
     resources :tests do
       patch :update_inline, on: :member
