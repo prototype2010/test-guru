@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
     (correct_questions / test.questions.count) >= SUCCESS_RATIO
   end
 
+  def perfectly?
+    correct_questions == test.questions.count
+  end
+
   private
 
   def out_of_time?

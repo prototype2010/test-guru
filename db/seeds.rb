@@ -72,3 +72,29 @@ Answer.create!([
                  { question: questions[7], correct: false, body: 'answer 3' },
                  { question: questions[7], correct: false, body: 'answer 4' }
                ])
+
+Badge.new(name: 'Category 1 All done',
+          description: 'For all tests done in category 1',
+          url: 'test url',
+          circumstance: 'all_from_category',
+          category: category1)
+
+Badge.new(name: 'Every test done for 100%',
+          description: 'This badge can be received only if every test is passed perfectly(100%)',
+          url: 'test url',
+          circumstance: 'all_perfectly')
+
+Badge.new(name: '3 passed tests',
+          description: 'This badge can be received when 3 tests passed ',
+          url: 'test url',
+          circumstance: 'tests_passed_3')
+
+Badge.new(name: '5 passed tests',
+          description: 'This badge can be received when 5 tests passed ',
+          url: 'test url',
+          circumstance: 'tests_passed_3')
+
+Badge.new(name: 'All tests done',
+          description: 'You should complete all tests to receive this badge',
+          url: 'test url',
+          circumstance: 'all_tests_done')
