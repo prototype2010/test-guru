@@ -1,2 +1,6 @@
 <h1>Badges</h1>
-<%= render 'badges_table', resource: @badges %>
+<h2>Received badges</h2>
+<%= render 'badges_table', resource: @badges_received %>
+
+<h2>Not received badges</h2>
+<%= render 'badges_table', resource: @badges_not_received %>

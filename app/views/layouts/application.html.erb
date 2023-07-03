@@ -11,18 +11,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="height: 100vh;position: relative; padding-bottom: 50px">
+  <body class="body">
     <%= render 'shared/navbar' %>
     <div class="container">
-        <%= render 'shared/flash' %>
-
+      <%= render 'shared/flash' %>
       <div class="row justify-content-center">
         <div class="col-md-5 col-8">
           <%= yield %>
         </div>
       </div>
     </div>
-
     <%= render 'shared/footer' %>
   </body>
 </html>

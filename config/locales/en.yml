@@ -29,6 +29,18 @@ en:
       gist_question: 'Gist question'
       next: 'Next'
   admin:
+    badges:
+      badges_table:
+        no_badges: 'There are no badges yet'
+        name: 'Name'
+        description: 'Description'
+        icon: 'Icon'
+        image: 'Image'
+        actions: 'Actions'
+      badge:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
     questions:
       form:
         submit: 'Submit'
@@ -77,6 +89,7 @@ en:
       title: 'Admin Panel | Test guru'
       greeting : 'Welcome %{email} guru'
       gists: 'Gists'
+      badges: 'Badges'
     tests:
       form:
         time_limit: 'Time Limit'

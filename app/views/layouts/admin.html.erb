@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="height: 100%">
+  <body class="body">
     <%= render 'admin/navbar' %>
     <div class="container">
       <%= render 'shared/flash' %>
@@ -21,7 +21,6 @@
         </div>
       </div>
     </div>
+    <%= render 'shared/footer' %>
   </body>
-
-  <%= render 'shared/footer' %>
 </html>
