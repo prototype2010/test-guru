@@ -19,8 +19,6 @@ class TestPassagesController < ApplicationController
   def result
     if @test_passage.passed? && !@test_passage.badge_given
       Badge.check_badges_available(@test_passage)
-
-      # @test_passage.update(badge_given: true)
     end
 
     render :result

@@ -1,0 +1,17 @@
+<% if resource.empty? %>
+  <p><%= t('.no_badges') %></p>
+<% end %>
+<table  class="table table-hover">
+  <tr>
+    <th class="align-middle" scope="col">
+      <%= t('.name') %>
+    </th>
+    <th class="align-middle" scope="col">
+      <%= t('.icon') %>
+    </th>
+    <th class="align-middle" scope="col">
+      <%= t('.description') %>
+    </th>
+  </tr>
+  <%= render @badges %>
+</table>

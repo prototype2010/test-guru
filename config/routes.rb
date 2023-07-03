@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'badges/index'
   devise_for :users,
              path: :gurus,
              path_names: { sign_in: :login, sign_out: :logout },
@@ -9,8 +10,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   resources :feedback, only: %i[new create show]
-  resources :badges, only: :show
-
+  resources :badges, only: :index
   resources :tests, only: :index do
     member do
       post :start

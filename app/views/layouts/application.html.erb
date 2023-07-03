@@ -12,18 +12,17 @@
   </head>
 
   <body style="height: 100vh;position: relative; padding-bottom: 50px">
-  <%= render 'shared/navbar' %>
-  <div class="container">
-      <%= render 'shared/flash' %>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+        <%= render 'shared/flash' %>
 
-    <div class="row justify-content-center">
-      <div class="col-md-5 col-8">
-        <%= yield %>
+      <div class="row justify-content-center">
+        <div class="col-md-5 col-8">
+          <%= yield %>
+        </div>
       </div>
     </div>
-  </div>
 
+    <%= render 'shared/footer' %>
   </body>
-
-  <%= render 'shared/footer' %>
 </html>

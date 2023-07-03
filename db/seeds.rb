@@ -12,9 +12,12 @@ category1, category2 = Category.create!([
                                           { title: 'Category 2' }
                                         ])
 
-test1, test2 = Test.create!([
+test1, test2, test3, test4, test5 = Test.create!([
                               { title: 'test 1', level: 1, category: category1, author: user1 },
-                              { title: 'test 2', level: 2, category: category2, author: user2 }
+                              { title: 'test 2', level: 2, category: category2, author: user2 },
+                              { title: 'test 3', level: 3, category: category2, author: user1 },
+                              { title: 'test 4', level: 4, category: category1, author: user1 },
+                              { title: 'test 5', level: 5, category: category1, author: user2 }
                             ])
 
 questions = Question.create!([
@@ -25,13 +28,25 @@ questions = Question.create!([
                                { body: 'Question body 5', test: test2 },
                                { body: 'Question body 6', test: test2 },
                                { body: 'Question body 7', test: test2 },
-                               { body: 'Question body 8', test: test2 }
+                               { body: 'Question body 8', test: test2 },
+                               { body: 'Question body 9', test: test3 },
+                               { body: 'Question body 10', test: test3 },
+                               { body: 'Question body 11', test: test3 },
+                               { body: 'Question body 12', test: test3 },
+                               { body: 'Question body 13', test: test4 },
+                               { body: 'Question body 14', test: test4 },
+                               { body: 'Question body 15', test: test4 },
+                               { body: 'Question body 16', test: test4 },
+                               { body: 'Question body 17', test: test5 },
+                               { body: 'Question body 18', test: test5 },
+                               { body: 'Question body 19', test: test5 },
+                               { body: 'Question body 20', test: test5 }
                              ])
-
-TestPassage.create!([
-                      { user: user1, test: test1, current_question: questions.first, correct_questions: 0 },
-                      { user: user2, test: test2, current_question: questions[4], correct_questions: 0 }
-                    ])
+#
+# TestPassage.create!([
+#                       { user: user1, test: test1, current_question: questions.first, correct_questions: 0 },
+#                       { user: user2, test: test2, current_question: questions[4], correct_questions: 0 }
+#                     ])
 
 Answer.create!([
                  { question: questions[0], correct: true, body: 'answer 1 (correct)' },
@@ -70,31 +85,97 @@ Answer.create!([
                  { question: questions[7], correct: true, body: 'answer 1 (correct)' },
                  { question: questions[7], correct: false, body: 'answer 2' },
                  { question: questions[7], correct: false, body: 'answer 3' },
-                 { question: questions[7], correct: false, body: 'answer 4' }
+                 { question: questions[7], correct: false, body: 'answer 4' },
+
+                 { question: questions[8], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[8], correct: false, body: 'answer 2' },
+                 { question: questions[8], correct: false, body: 'answer 3' },
+                 { question: questions[8], correct: false, body: 'answer 4' },
+
+                 { question: questions[9], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[9], correct: false, body: 'answer 2' },
+                 { question: questions[9], correct: false, body: 'answer 3' },
+                 { question: questions[9], correct: false, body: 'answer 4' },
+
+                 { question: questions[10], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[10], correct: false, body: 'answer 2' },
+                 { question: questions[10], correct: false, body: 'answer 3' },
+                 { question: questions[10], correct: false, body: 'answer 4' },
+
+                 { question: questions[11], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[11], correct: false, body: 'answer 2' },
+                 { question: questions[11], correct: false, body: 'answer 3' },
+                 { question: questions[11], correct: false, body: 'answer 4' },
+
+                 { question: questions[12], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[12], correct: false, body: 'answer 2' },
+                 { question: questions[12], correct: false, body: 'answer 3' },
+                 { question: questions[12], correct: false, body: 'answer 4' },
+
+                 { question: questions[13], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[13], correct: false, body: 'answer 2' },
+                 { question: questions[13], correct: false, body: 'answer 3' },
+                 { question: questions[13], correct: false, body: 'answer 4' },
+
+                 { question: questions[14], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[14], correct: false, body: 'answer 2' },
+                 { question: questions[14], correct: false, body: 'answer 3' },
+                 { question: questions[14], correct: false, body: 'answer 4' },
+
+                 { question: questions[15], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[15], correct: false, body: 'answer 2' },
+                 { question: questions[15], correct: false, body: 'answer 3' },
+                 { question: questions[15], correct: false, body: 'answer 4' },
+
+                 { question: questions[16], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[16], correct: false, body: 'answer 2' },
+                 { question: questions[16], correct: false, body: 'answer 3' },
+                 { question: questions[16], correct: false, body: 'answer 4' },
+
+                 { question: questions[17], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[17], correct: false, body: 'answer 2' },
+                 { question: questions[17], correct: false, body: 'answer 3' },
+                 { question: questions[17], correct: false, body: 'answer 4' },
+
+                 { question: questions[18], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[18], correct: false, body: 'answer 2' },
+                 { question: questions[18], correct: false, body: 'answer 3' },
+                 { question: questions[18], correct: false, body: 'answer 4' },
+
+                 { question: questions[19], correct: true, body: 'answer 1 (correct)' },
+                 { question: questions[19], correct: false, body: 'answer 2' },
+                 { question: questions[19], correct: false, body: 'answer 3' },
+                 { question: questions[19], correct: false, body: 'answer 4' }
                ])
 
-Badge.new(name: 'Category 1 All done',
+Badge.create!(name: 'Category 1 All done',
           description: 'For all tests done in category 1',
-          url: 'test url',
+          url: '/images/badge3.jpg',
           circumstance: 'all_from_category',
           category: category1)
 
-Badge.new(name: 'Every test done for 100%',
+Badge.create!(name: 'Category 2 All done',
+          description: 'For all tests done in category 2',
+          url: '/images/badge4.jpg',
+          circumstance: 'all_from_category',
+          category: category2)
+
+Badge.create!(name: 'Every test done for 100%',
           description: 'This badge can be received only if every test is passed perfectly(100%)',
-          url: 'test url',
+          url: '/images/badge1.png',
           circumstance: 'all_perfectly')
 
-Badge.new(name: '3 passed tests',
+Badge.create!(name: '3 passed tests',
           description: 'This badge can be received when 3 tests passed ',
-          url: 'test url',
+          url: '/images/badge2.webp',
           circumstance: 'tests_passed_3')
 
-Badge.new(name: '5 passed tests',
+Badge.create!(name: '5 passed tests',
           description: 'This badge can be received when 5 tests passed ',
-          url: 'test url',
-          circumstance: 'tests_passed_3')
+          url: '/images/badge3.jpeg',
+          circumstance: 'tests_passed_5')
 
-Badge.new(name: 'All tests done',
+Badge.create!(name: 'All tests done',
           description: 'You should complete all tests to receive this badge',
-          url: 'test url',
+          url: '/images/badge4.jpg',
           circumstance: 'all_tests_done')
