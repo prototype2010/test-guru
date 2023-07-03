@@ -26,13 +26,13 @@ class Badge < ApplicationRecord
     def all_from_category(test_passage, badge)
       return false if test_passage.test.category.id != badge.category_id
 
-      category_tests = test_passage.category.tests.order(id)
+      category_tests = test_passage.test.category.tests.order(:id)
       user_category_passed_tests = TestPassage
                                       .where(user: test_passage.user,
                                              tests: category_tests)
                                       .order(:test_id)
                                       .select(&:passed?)
-                                      .distinct(:test_id)
+                                      .uniq
 
       category_tests == user_category_passed_tests
     end
@@ -55,7 +55,7 @@ class Badge < ApplicationRecord
     def all_tests_done(test_passage, _badge)
       passed_tests_ids = TestPassage
                            .user_passed_tests(test_passage)
-                           .distinct(:test_id)
+                           .uniq
                            .pluck(:test_id)
 
       all_tests_ids = Test.all.distinct(:id).order(:id).pluck(:id)

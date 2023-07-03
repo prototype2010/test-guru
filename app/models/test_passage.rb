@@ -9,8 +9,8 @@ class TestPassage < ApplicationRecord
   before_create :set_end_time
 
   class << self
-    def user_passed_tests(test_passage)
-      where(user: test_passage.user)
+    def user_passed_tests(user)
+      where(user: user)
         .order(:test_id)
         .select(&:passed?)
     end

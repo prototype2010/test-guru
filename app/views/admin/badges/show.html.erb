@@ -1,12 +1,12 @@
-<h1>Badge <%= @badge.name %></h1>
+<h1><%= t('.name') %>: <%= @badge.name %></h1>
 <label>
-  Icon: <%= image_tag(@badge.url, size: '25x25') %>
+  <%= t('.icon') %>: <%= image_tag(@badge.url, size: '25x25') %>
 </label>
 <br/>
-<label>Description: <%= @badge.description %></label>
+<label><%= t('.description') %>: <%= @badge.description %></label>
 <br/>
-<label>Category: <%= @badge.category&.title || 'None selected' %></label>
+<label><%= t('.category') %>: <%= @badge.category&.title || 'None selected' %></label>
 <br/>
-<label>Circumstance: <%= from_index_to_readable(@badge.circumstance) %></label>
+<label><%= t('.circumstance') %>: <%= from_index_to_readable(@badge.circumstance) %></label>
 <br/>
-<%= link_to 'Back to all badges', admin_badges_path %>
+<%= link_to t('.back'), admin_badges_path %>

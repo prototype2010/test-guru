@@ -28,8 +28,20 @@ en:
       question_number: 'Question № %{current} out of %{total}'
       gist_question: 'Gist question'
       next: 'Next'
+  badges:
+    index:
+      badges: 'badges'
+      received_badges: 'Received badges'
+      not_received_badges: 'Not received badges'
+    badges_table:
+      no_badges: 'No badges received yet'
+      name: 'Name'
+      description: 'Description'
+      icon: 'Icon'
   admin:
     badges:
+      index:
+        title: 'Badges'
       badges_table:
         no_badges: 'There are no badges yet'
         name: 'Name'
@@ -41,6 +53,22 @@ en:
         show: 'Show'
         edit: 'Edit'
         delete: 'Delete'
+        confirmation: 'Are you sure?'
+      show:
+        name: 'Name'
+        url: 'Url'
+        icon: 'Icon'
+        description: 'description'
+        circumstance: 'circumstance'
+        category: 'Category'
+        back: 'Back to all badges'
+      form:
+        name: 'Name'
+        url: 'Url'
+        description: 'description'
+        circumstance: 'circumstance'
+        category: 'Category'
+        submit: 'Submit'
     questions:
       form:
         submit: 'Submit'

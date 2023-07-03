@@ -1,6 +1,6 @@
-<h1>Badges</h1>
-<h2>Received badges</h2>
+<h1><%= t('.badges') %></h1>
+<h2><%= t('.received_badges') %></h2>
 <%= render 'badges_table', resource: @badges_received %>
 
-<h2>Not received badges</h2>
+<h2><%= t('.not_received_badges') %></h2>
 <%= render 'badges_table', resource: @badges_not_received %>
