@@ -28,7 +28,47 @@ ru:
       question_number: 'Вопрос № %{current} из %{total}'
       gist_question: 'Сделать гист'
       next: 'Следующий'
+  badges:
+    index:
+      badges: 'Достижения'
+      received_badges: 'Заработанные достижения'
+      not_received_badges: 'Не заработанные достижения'
+    badges_table:
+      no_badges: 'Пока нет достижений'
+      name: 'Имя'
+      description: 'Описание'
+      icon: 'иконка'
   admin:
+    badges:
+      index:
+        title: 'Достижения'
+      badges_table:
+        no_badges: 'Пока нет достижений'
+        name: 'Имя'
+        description: 'Описание'
+        icon: 'Иконка'
+        image: 'Картинка'
+        actions: 'Действия'
+      badge:
+        show: 'Посмотреть'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirmation: 'Вы уверены ?'
+      show:
+        name: 'Имя'
+        url: 'Ссылка'
+        icon: 'Иконка'
+        description: 'Описание'
+        circumstance: 'Условие'
+        category: 'Категория'
+        back: 'Перейти ко всем достижения'
+      form:
+        name: 'имя'
+        url: 'Ссылка'
+        description: 'Описание'
+        circumstance: 'Условия'
+        category: 'Категория'
+        submit: 'Отправить'
     questions:
       form:
         submit: 'Отправить'
