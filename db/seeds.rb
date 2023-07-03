@@ -1,4 +1,5 @@
-user1 = User.new({ first_name: 'My name 1', last_name: 'Last name 1', password: '111111', email: "1@gmail.com" })
+
+user1 = User.new({ first_name: 'My name 1', last_name: 'Last name 1', password: '111111', email: "1@gmail.com", type: 'Admin' })
 user1.skip_confirmation!
 user1.save!
 
