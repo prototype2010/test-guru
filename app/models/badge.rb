@@ -24,17 +24,17 @@ class Badge < ApplicationRecord
     end
 
     def all_from_category(test_passage, badge)
-      return false if badge.category_id != test_passage.test.category.id
+      return false if test_passage.test.category.id != badge.category_id
 
-      category_test_ids = test_passage.test.category.tests.order(:id).pluck(:id)
-      user_category_tests = TestPassage.where(user: test_passage.user,
-                                              test: category_test_ids)
-                                       .distinct(:test_id)
-                                       .order(:test_id)
-                                       .select(&:passed?)
-                                       .pluck(:test_id)
+      category_tests = test_passage.category.tests.order(id)
+      user_category_passed_tests = TestPassage
+                                      .where(user: test_passage.user,
+                                             tests: category_tests)
+                                      .order(:test_id)
+                                      .select(&:passed?)
+                                      .distinct(:test_id)
 
-      category_test_ids == user_category_tests
+      category_tests == user_category_passed_tests
     end
 
     def all_perfectly(test_passage, _badge)
@@ -42,30 +42,24 @@ class Badge < ApplicationRecord
     end
 
     def tests_passed_3(test_passage, _badge)
-      count_passed_tests(test_passage) == 5
+      TestPassage
+        .user_passed_tests(test_passage.user)
+        .count == 5
     end
     def tests_passed_5(test_passage, _badge)
-      count_passed_tests(test_passage) == 5
+      TestPassage
+        .user_passed_tests(test_passage.user)
+        .count == 3
     end
 
     def all_tests_done(test_passage, _badge)
-      passed_tests_ids = TestPassage.where(user: test_passage.user)
-                                    .distinct(:test_id)
-                                    .order(:test_id)
-                                    .select(&:passed?)
-                                    .pluck(:test_id)
+      passed_tests_ids = TestPassage
+                           .user_passed_tests(test_passage)
+                           .distinct(:test_id)
+                           .pluck(:test_id)
 
       all_tests_ids = Test.all.distinct(:id).order(:id).pluck(:id)
       passed_tests_ids == all_tests_ids
-    end
-
-    private
-
-    def count_passed_tests(test_passage)
-      TestPassage
-        .where(user: test_passage.user)
-        .select(&:passed?)
-        .count
     end
   end
 end
