@@ -19,6 +19,10 @@
   <%= form.select :circumstance, circumstance_select_options %>
   <br/>
 
+  <%= form.label t('.level') %>
+  <%= form.select :level, level_select_options %>
+  <br/>
+
   <%= form.label t('.category') %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @badge.new_record? %>
   <br/>

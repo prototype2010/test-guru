@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
 
   class << self
     def user_passed_tests(user)
-      where(user: user)
+      where(user:)
         .order(:test_id)
         .select(&:passed?)
     end
@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     return if out_of_time?
-    
+
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!

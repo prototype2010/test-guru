@@ -9,6 +9,9 @@
     <%= badge.description  %>
   </th>
   <th class="align-middle" scope="row">
+    <%= badge.level %>
+  </th>
+  <th class="align-middle" scope="row">
     <%= link_to t('.show'), admin_badge_path(badge) %>
     <%= link_to t('.edit'), edit_admin_badge_path(badge) %>
     <%= link_to t('.delete'),

@@ -38,11 +38,13 @@ en:
       name: 'Name'
       description: 'Description'
       icon: 'Icon'
+      level: 'Level'
   admin:
     badges:
       index:
         title: 'Badges'
       badges_table:
+        level: 'Level'
         no_badges: 'There are no badges yet'
         name: 'Name'
         description: 'Description'
@@ -55,6 +57,7 @@ en:
         delete: 'Delete'
         confirmation: 'Are you sure?'
       show:
+        level: 'Level'
         name: 'Name'
         url: 'Url'
         icon: 'Icon'
@@ -63,6 +66,7 @@ en:
         category: 'Category'
         back: 'Back to all badges'
       form:
+        level: 'Level'
         name: 'Name'
         url: 'Url'
         description: 'description'

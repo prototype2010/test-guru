@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2023_06_30_080355) do
     t.string "url", null: false
     t.string "description", null: false
     t.string "circumstance", null: false
+    t.integer "level", default: 1
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

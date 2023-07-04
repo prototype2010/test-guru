@@ -9,6 +9,10 @@ module BadgesHelper
     end
   end
 
+  def level_select_options
+    Test.all.order(:level).distinct(:level).pluck(:level)
+  end
+
   def from_snake_to_readable(circumstance)
     circumstance.gsub('_',' ')
   end

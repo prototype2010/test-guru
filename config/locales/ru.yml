@@ -38,11 +38,13 @@ ru:
       name: 'Имя'
       description: 'Описание'
       icon: 'иконка'
+      level: 'Уровень'
   admin:
     badges:
       index:
         title: 'Достижения'
       badges_table:
+        level: 'Уровень'
         no_badges: 'Пока нет достижений'
         name: 'Имя'
         description: 'Описание'
@@ -55,6 +57,7 @@ ru:
         delete: 'Удалить'
         confirmation: 'Вы уверены ?'
       show:
+        level: 'Уровень'
         name: 'Имя'
         url: 'Ссылка'
         icon: 'Иконка'
@@ -63,6 +66,7 @@ ru:
         category: 'Категория'
         back: 'Перейти ко всем достижения'
       form:
+        level: 'Уровень'
         name: 'имя'
         url: 'Ссылка'
         description: 'Описание'

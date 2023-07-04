@@ -5,8 +5,7 @@ class Admin::BadgesController < Admin::BaseController
     @badges = Badge.all
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @badge = Badge.new(badge_params)
@@ -18,14 +17,18 @@ class Admin::BadgesController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def new
     @badge = Badge.new
   end
 
   def update
+    if @badge.update(badge_params)
+      redirect_to admin_badge_path(@badge)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -42,6 +45,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:name, :description, :url, :category_id, :circumstance)
+    params.require(:badge).permit(:name, :description, :url, :category_id, :circumstance, :level)
   end
 end

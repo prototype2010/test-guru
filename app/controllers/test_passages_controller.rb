@@ -2,11 +2,11 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result]
   after_action :set_end_time_cookie, only: %i[show update]
 
-
   def update
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      BadgeService.new(@test_passage).check_badges_available
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -14,15 +14,9 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def show;end
+  def show; end
 
-  def result
-    if @test_passage.passed? && !@test_passage.badge_given
-      Badge.check_badges_available(@test_passage)
-    end
-
-    render :result
-  end
+  def result; end
 
   private
 

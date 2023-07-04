@@ -5,7 +5,9 @@
 <br/>
 <label><%= t('.description') %>: <%= @badge.description %></label>
 <br/>
-<label><%= t('.category') %>: <%= @badge.category&.title || 'None selected' %></label>
+<label><%= t('.category') %>: <%= @badge.category.title %></label>
+<br/>
+<label><%= t('.level') %>: <%= @badge.level %></label>
 <br/>
 <label><%= t('.circumstance') %>: <%= from_index_to_readable(@badge.circumstance) %></label>
 <br/>

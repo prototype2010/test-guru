@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def completed_tests_by_level(level)
-    completed_tests.where(level: level)
+    completed_tests.where(level:)
   end
 
   def test_passage(test)
