@@ -57,6 +57,7 @@ en:
         delete: 'Delete'
         confirmation: 'Are you sure?'
       show:
+        rule: 'Rule'
         level: 'Level'
         name: 'Name'
         url: 'Url'
@@ -66,6 +67,7 @@ en:
         category: 'Category'
         back: 'Back to all badges'
       form:
+        rule: 'Rule'
         level: 'Level'
         name: 'Name'
         url: 'Url'

@@ -57,6 +57,7 @@ ru:
         delete: 'Удалить'
         confirmation: 'Вы уверены ?'
       show:
+        rule: 'Правило'
         level: 'Уровень'
         name: 'Имя'
         url: 'Ссылка'
@@ -66,6 +67,7 @@ ru:
         category: 'Категория'
         back: 'Перейти ко всем достижения'
       form:
+        rule: 'Правило'
         level: 'Уровень'
         name: 'имя'
         url: 'Ссылка'

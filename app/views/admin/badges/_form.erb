@@ -15,10 +15,6 @@
   <%= form.text_field :description %>
   <br/>
 
-  <%= form.label t('.circumstance') %>
-  <%= form.select :circumstance, circumstance_select_options %>
-  <br/>
-
   <%= form.label t('.level') %>
   <%= form.select :level, level_select_options %>
   <br/>
@@ -27,6 +23,13 @@
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @badge.new_record? %>
   <br/>
 
+  <%= form.label t('.rule') %>
+  <%= form.collection_select :rule_id,
+                             Rule.all,
+                             :id,
+                             :description,
+                             prompt:  @badge.new_record? %>
+  <br/>
 
   <%= form.submit t('.submit') %>
   <%= link_to 'Back to all badges', admin_badges_path %>

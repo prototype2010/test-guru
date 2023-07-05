@@ -6,7 +6,7 @@ class BadgeService
   def check_badges_available
     received_badges = Badge.all.select do |badge|
       method_name = badge.rule.circumstance.to_sym
-      send("#{method_name}?", badge, @test_passage)
+      badge.rule.send("#{method_name}?", badge, @test_passage)
     end
 
     @test_passage.user.badges << received_badges

@@ -10,6 +10,7 @@ class Rule < ApplicationRecord
     all_within_level
   ]
 
+  validates :description, presence: true
   validates :circumstance, inclusion: { in: circumstance_variants.keys.map(&:to_s) }
 
   def all_from_category?(badge, test_passage)
@@ -53,15 +54,15 @@ class Rule < ApplicationRecord
   end
 
   def all_within_level?(badge, test_passage)
-    completed_tests_ids = test_passage
-                          .user
-                          .completed_tests_by_level(badge.level)
-                          .order(:id)
-                          .select(&:passed?)
-                          .uniq
+    completed_tests = TestPassage
+                            .where(user: test_passage.user)
+                            .order(:id)
+                            .select { |passage| passage.test.level == badge.level  }
+                            .select(&:passed?)
+                            .uniq
 
-    all_tests_ids = Test.where(level: badge.level).order(:id)
+    all_level_tests = Test.where(level: badge.level).order(:id)
 
-    completed_tests_ids == all_tests_ids
+    completed_tests == all_level_tests
   end
 end

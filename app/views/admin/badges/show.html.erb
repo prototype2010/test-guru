@@ -9,6 +9,6 @@
 <br/>
 <label><%= t('.level') %>: <%= @badge.level %></label>
 <br/>
-<label><%= t('.circumstance') %>: <%= from_index_to_readable(@badge.circumstance) %></label>
+<label><%= t('.rule') %>: <%= @badge.rule.description %></label>
 <br/>
 <%= link_to t('.back'), admin_badges_path %>

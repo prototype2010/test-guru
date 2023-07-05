@@ -143,12 +143,13 @@ Answer.create!([
                  { question: questions[19], correct: false, body: 'answer 4' }
                ])
 
-all_from_category = Rule.create!(circumstance: 'all_from_category')
-all_perfectly = Rule.create!(circumstance: 'all_perfectly')
-tests_passed_3 = Rule.create!(circumstance: 'tests_passed_3')
-tests_passed_5 = Rule.create!(circumstance: 'tests_passed_5')
-all_within_level = Rule.create!(circumstance: 'all_within_level')
-all_tests_done = Rule.create!(circumstance: 'all_tests_done')
+all_from_category = Rule.create!(circumstance: 'all_from_category', description: 'All tests are done within category')
+all_perfectly = Rule.create!(circumstance: 'all_perfectly',
+                             description: 'All tests are finished with 100% correct answers')
+tests_passed_3 = Rule.create!(circumstance: 'tests_passed_3', description: '3 any tests are passed')
+tests_passed_5 = Rule.create!(circumstance: 'tests_passed_5', description: '5 any tests are passed')
+all_within_level = Rule.create!(circumstance: 'all_within_level', description: 'All tests are done within level')
+all_tests_done = Rule.create!(circumstance: 'all_tests_done', description: 'All tests are done')
 
 Badge.create!(name: 'Category 1 All done',
               description: 'For all tests done in category 1',
