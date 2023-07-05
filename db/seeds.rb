@@ -42,11 +42,6 @@ questions = Question.create!([
                                { body: 'Question body 19', test: test5 },
                                { body: 'Question body 20', test: test5 }
                              ])
-#
-# TestPassage.create!([
-#                       { user: user1, test: test1, current_question: questions.first, correct_questions: 0 },
-#                       { user: user2, test: test2, current_question: questions[4], correct_questions: 0 }
-#                     ])
 
 Answer.create!([
                  { question: questions[0], correct: true, body: 'answer 1 (correct)' },
@@ -148,44 +143,58 @@ Answer.create!([
                  { question: questions[19], correct: false, body: 'answer 4' }
                ])
 
+all_from_category = Rule.create!(circumstance: 'all_from_category')
+all_perfectly = Rule.create!(circumstance: 'all_perfectly')
+tests_passed_3 = Rule.create!(circumstance: 'tests_passed_3')
+tests_passed_5 = Rule.create!(circumstance: 'tests_passed_5')
+all_within_level = Rule.create!(circumstance: 'all_within_level')
+all_tests_done = Rule.create!(circumstance: 'all_tests_done')
+
 Badge.create!(name: 'Category 1 All done',
               description: 'For all tests done in category 1',
               url: '/images/badge3.jpg',
-              circumstance: 'all_from_category',
               category: category1,
-              level: 1)
+              level: 1,
+              rule: all_from_category)
 
 Badge.create!(name: 'Category 2 All done',
               description: 'For all tests done in category 2',
               url: '/images/badge4.jpg',
-              circumstance: 'all_from_category',
               category: category2,
-              level: 1)
+              level: 1,
+              rule: all_from_category)
 
 Badge.create!(name: 'Every test done for 100%',
               description: 'This badge can be received only if every test is passed perfectly(100%)',
               url: '/images/badge1.png',
-              circumstance: 'all_perfectly',
-              category: category2,
-              level: 1)
+              category: category1,
+              level: 1,
+              rule: all_perfectly)
+
+Badge.create!(name: 'All within level done',
+              description: 'This badge can be received when 3 tests passed ',
+              url: '/images/badge2.webp',
+              category: category1,
+              level: 1,
+              rule: all_within_level)
 
 Badge.create!(name: '3 passed tests',
               description: 'This badge can be received when 3 tests passed ',
               url: '/images/badge2.webp',
-              circumstance: 'tests_passed_3',
-              category: category2,
-              level: 1)
+              category: category1,
+              level: 1,
+              rule: tests_passed_3)
 
 Badge.create!(name: '5 passed tests',
               description: 'This badge can be received when 5 tests passed ',
               url: '/images/badge3.jpeg',
-              circumstance: 'tests_passed_5',
-              category: category2,
-              level: 1)
+              category: category1,
+              level: 1,
+              rule: tests_passed_5)
 
 Badge.create!(name: 'All tests done',
               description: 'You should complete all tests to receive this badge',
               url: '/images/badge4.jpg',
-              circumstance: 'all_tests_done',
-              category: category2,
-              level: 1)
+              category: category1,
+              level: 1,
+              rule: all_tests_done)
