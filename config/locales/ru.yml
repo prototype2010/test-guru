@@ -34,6 +34,7 @@ ru:
       received_badges: 'Заработанные достижения'
       not_received_badges: 'Не заработанные достижения'
     badges_table:
+      rule: 'Правило'
       no_badges: 'Пока нет достижений'
       name: 'Имя'
       description: 'Описание'
@@ -44,6 +45,7 @@ ru:
       index:
         title: 'Достижения'
       badges_table:
+        rule: 'Правило'
         level: 'Уровень'
         no_badges: 'Пока нет достижений'
         name: 'Имя'

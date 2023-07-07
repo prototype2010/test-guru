@@ -34,6 +34,7 @@ en:
       received_badges: 'Received badges'
       not_received_badges: 'Not received badges'
     badges_table:
+      rule: 'Rule'
       no_badges: 'No badges received yet'
       name: 'Name'
       description: 'Description'
@@ -44,6 +45,7 @@ en:
       index:
         title: 'Badges'
       badges_table:
+        rule: 'Rule'
         level: 'Level'
         no_badges: 'There are no badges yet'
         name: 'Name'

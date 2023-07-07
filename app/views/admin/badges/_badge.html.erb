@@ -9,7 +9,7 @@
     <%= badge.description  %>
   </th>
   <th class="align-middle" scope="row">
-    <%= badge.level %>
+    <%= print_badge_rules(badge) %>
   </th>
   <th class="align-middle" scope="row">
     <%= link_to t('.show'), admin_badge_path(badge) %>

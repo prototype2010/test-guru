@@ -3,7 +3,9 @@ module BadgesHelper
     "#{badge.persisted? ? 'Edit' : 'Create new'} badge"
   end
 
-  def level_select_options
-    Test.all.order(:level).distinct(:level).pluck(:level)
+  def print_badge_rules(badge)
+    badge.rules
+         .map(&:description)
+         .join(', ')
   end
 end

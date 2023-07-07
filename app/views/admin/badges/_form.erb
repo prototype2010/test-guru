@@ -15,20 +15,14 @@
   <%= form.text_field :description %>
   <br/>
 
-  <%= form.label t('.level') %>
-  <%= form.select :level, level_select_options %>
-  <br/>
-
-  <%= form.label t('.category') %>
-  <%= form.collection_select :category_id, Category.all, :id, :title, prompt:  @badge.new_record? %>
-  <br/>
-
   <%= form.label t('.rule') %>
-  <%= form.collection_select :rule_id,
-                             Rule.all,
-                             :id,
-                             :description,
-                             prompt:  @badge.new_record? %>
+  <%= collection_check_boxes(:badge, :rule_ids, Rule.all, :id, :description,
+                             include_hidden: false) do |b| %>
+    <div>
+      <%= b.check_box(checked: @badge.rules.include?(b.object)) %>
+      <%= b.label %>
+    </div>
+  <% end %>
   <br/>
 
   <%= form.submit t('.submit') %>

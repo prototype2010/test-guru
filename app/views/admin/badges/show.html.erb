@@ -5,10 +5,6 @@
 <br/>
 <label><%= t('.description') %>: <%= @badge.description %></label>
 <br/>
-<label><%= t('.category') %>: <%= @badge.category.title %></label>
-<br/>
-<label><%= t('.level') %>: <%= @badge.level %></label>
-<br/>
-<label><%= t('.rule') %>: <%= @badge.rule.description %></label>
+<label><%= t('.rule') %>: <%= print_badge_rules(@badge) %></label>
 <br/>
 <%= link_to t('.back'), admin_badges_path %>
