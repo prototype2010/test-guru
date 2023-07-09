@@ -8,9 +8,17 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_question, on: %i[create update]
   before_create :set_end_time
 
+  class << self
+    def user_passed_tests(user)
+      where(user:)
+        .order(:test_id)
+        .select(&:passed?)
+    end
+  end
+
   def accept!(answer_ids)
     return if out_of_time?
-    
+
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
@@ -29,6 +37,10 @@ class TestPassage < ApplicationRecord
 
   def passed?
     (correct_questions / test.questions.count) >= SUCCESS_RATIO
+  end
+
+  def perfectly?
+    correct_questions == test.questions.count
   end
 
   private

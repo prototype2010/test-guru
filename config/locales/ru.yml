@@ -28,7 +28,55 @@ ru:
       question_number: 'Вопрос № %{current} из %{total}'
       gist_question: 'Сделать гист'
       next: 'Следующий'
+  badges:
+    index:
+      badges: 'Достижения'
+      received_badges: 'Заработанные достижения'
+      not_received_badges: 'Не заработанные достижения'
+    badges_table:
+      rule: 'Правило'
+      no_badges: 'Пока нет достижений'
+      name: 'Имя'
+      description: 'Описание'
+      icon: 'иконка'
+      level: 'Уровень'
   admin:
+    badges:
+      index:
+        title: 'Достижения'
+      badges_table:
+        rule: 'Правило'
+        level: 'Уровень'
+        no_badges: 'Пока нет достижений'
+        name: 'Имя'
+        description: 'Описание'
+        icon: 'Иконка'
+        image: 'Картинка'
+        actions: 'Действия'
+      badge:
+        show: 'Посмотреть'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirmation: 'Вы уверены ?'
+      show:
+        rule: 'Правило'
+        level: 'Уровень'
+        name: 'Имя'
+        url: 'Ссылка'
+        icon: 'Иконка'
+        description: 'Описание'
+        circumstance: 'Условие'
+        category: 'Категория'
+        back: 'Перейти ко всем достижения'
+      form:
+        rule: 'Правило'
+        level: 'Уровень'
+        name: 'имя'
+        url: 'Ссылка'
+        description: 'Описание'
+        circumstance: 'Условия'
+        category: 'Категория'
+        submit: 'Отправить'
     questions:
       form:
         submit: 'Отправить'
@@ -77,6 +125,7 @@ ru:
       title: 'Панель администратора | Тест Гуру'
       greeting : 'Добро пожаловать %{email} гуру'
       gists: 'Гисты'
+      badges: 'Достижения'
     tests:
       form:
         time_limit: 'Время на прохождение'

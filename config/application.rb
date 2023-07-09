@@ -21,5 +21,6 @@ module TestGuru
 
     # config.eager_load_paths << Rails.root.join("extras")
     config.eager_load_paths << "#{Rails.root}/lib/clients"
+    config.eager_load_paths << "#{Rails.root}/specifications"
   end
 end

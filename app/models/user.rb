@@ -7,6 +7,8 @@ class User < ApplicationRecord
          :confirmable,
          :trackable
 
+  has_many :users_badges, dependent: :destroy
+  has_many :badges, through: :users_badges, source: :badge, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
@@ -16,7 +18,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def completed_tests_by_level(level)
-    completed_tests.where(level: level)
+    completed_tests.where(level:)
   end
 
   def test_passage(test)

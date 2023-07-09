@@ -1,0 +1,10 @@
+<h1><%= t('.name') %>: <%= @badge.name %></h1>
+<label>
+  <%= t('.icon') %>: <%= image_tag(@badge.url, size: '25x25') %>
+</label>
+<br/>
+<label><%= t('.description') %>: <%= @badge.description %></label>
+<br/>
+<label><%= t('.rule') %>: <%= print_badge_rules(@badge) %></label>
+<br/>
+<%= link_to t('.back'), admin_badges_path %>

@@ -1,0 +1,30 @@
+<label><%= form_badge_header(@badge) %></label>
+<%= render 'shared/errors', resource: @badge %>
+<%= form_with model: [:admin, @badge],
+              local: true do |form| %>
+
+  <%= form.label t('.name') %>
+  <%= form.text_field :name %>
+  <br/>
+
+  <%= form.label t('.url') %>
+  <%= form.text_field :url %>
+  <br/>
+
+  <%= form.label t('.description') %>
+  <%= form.text_field :description %>
+  <br/>
+
+  <%= form.label t('.rule') %>
+  <%= collection_check_boxes(:badge, :rule_ids, Rule.all, :id, :description,
+                             include_hidden: false) do |b| %>
+    <div>
+      <%= b.check_box(checked: @badge.rules.include?(b.object)) %>
+      <%= b.label %>
+    </div>
+  <% end %>
+  <br/>
+
+  <%= form.submit t('.submit') %>
+  <%= link_to 'Back to all badges', admin_badges_path %>
+<% end %>
